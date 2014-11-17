@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kollegah"
+    android:gravity="center_horizontal"
+    tools:context="${packageName}.${activityClass}" >
+
+    <Button
+        android:id="@+id/btnUebersicht"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:onClick="onButtonClick"
+        android:text="@string/uebersicht" />
+
+    <Button
+        android:id="@+id/btnWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnUebersicht"
+        android:layout_marginTop="15dp"
+        android:onClick="onButtonClick"
+        android:text="@string/workout" />
+
+    <Button
+        android:id="@+id/btnUebungen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnWorkout"
+        android:layout_marginTop="15dp"
+        android:onClick="onButtonClick"
+        android:text="@string/uebungen" />
+
+    <Button
+        android:id="@+id/btnProfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnUebungen"
+        android:layout_marginTop="15dp"
+        android:onClick="onButtonClick"
+        android:text="@string/profil" />
+
+    <Button
+        android:id="@+id/btnKalender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnProfil"
+        android:layout_marginTop="15dp"
+        android:onClick="onButtonClick"
+        android:text="@string/kalender" />
+
+    <Button
+        android:id="@+id/btnEinstellungen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnKalender"
+        android:layout_marginTop="15dp"
+        android:onClick="onButtonClick"
+        android:text="@string/einstellungen" />
+
+</RelativeLayout>
