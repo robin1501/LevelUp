@@ -39,7 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + "gewicht integer, "
             + "groesse integer, "
             + "geschlecht char(1), "
-            + "wunschgewicht int);";
+            + "wunschgewicht integer);";
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
