@@ -1,18 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:id="@+id/">
 
-    <EditText
-        android:id="@+id/editText1"
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Übersicht"
+        android:id="@+id/uebersichtTv"
         android:layout_alignParentTop="true"
-        android:ems="10"
-        android:text="Übersicht" >
+        android:layout_centerHorizontal="true" />
 
-        <requestFocus />
-    </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Bisher Erledigt:"
+        android:id="@+id/uebersichtTv2"
+        android:layout_below="@+id/uebersichtTv"
+        android:layout_alignRight="@+id/uebersichtTv"
+        android:layout_alignEnd="@+id/uebersichtTv"
+        android:layout_marginRight="47dp"
+        android:layout_marginTop="172dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Zahl"
+        android:id="@+id/uebersichtTv3"
+        android:layout_marginLeft="54dp"
+        android:layout_alignTop="@+id/uebersichtTv2"
+        android:layout_alignLeft="@+id/uebersichtTv"
+        android:layout_alignStart="@+id/uebersichtTv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Letztes Workout:"
+        android:id="@+id/uebersichtTv4"
+        android:layout_below="@+id/uebersichtTv2"
+        android:layout_toLeftOf="@+id/uebersichtTv3"
+        android:layout_toStartOf="@+id/uebersichtTv3"
+        android:layout_marginTop="92dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Nächstes Workout:"
+        android:id="@+id/uebersichtTv6"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/uebersichtTv4"
+        android:layout_alignLeft="@+id/uebersichtTv4"
+        android:layout_alignStart="@+id/uebersichtTv4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Aktueller BMI:"
+        android:id="@+id/uebersichtTv8"
+        android:layout_below="@+id/uebersichtTv6"
+        android:layout_alignLeft="@+id/uebersichtTv6"
+        android:layout_alignStart="@+id/uebersichtTv6"
+        android:layout_marginTop="29dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Datum"
+        android:id="@+id/uebersichtTv5"
+        android:layout_alignTop="@+id/uebersichtTv4"
+        android:layout_toRightOf="@+id/uebersichtTv6"
+        android:layout_toEndOf="@+id/uebersichtTv6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Datum"
+        android:id="@+id/uebersichtTv7"
+        android:layout_toEndOf="@+id/uebersichtTv6"
+        android:layout_alignTop="@+id/uebersichtTv6"
+        android:layout_alignLeft="@+id/uebersichtTv3"
+        android:layout_alignStart="@+id/uebersichtTv3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Zahl"
+        android:id="@+id/uebersichtTv9"
+        android:layout_alignTop="@+id/uebersichtTv8"
+        android:layout_alignRight="@+id/uebersichtTv"
+        android:layout_alignEnd="@+id/uebersichtTv" />
 
 </RelativeLayout>
