@@ -39,6 +39,8 @@ public class UebersichtActivity extends Activity {
         }
 
         Intent intent = ChartFactory.getPieChartIntent(context, series, renderer, "Pie");
+
         return intent;
+
     }
 }
