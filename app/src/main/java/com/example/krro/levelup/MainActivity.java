@@ -16,6 +16,12 @@ public class MainActivity extends Activity {
 	public void onButtonClick(View view) {
 		if(view.getId() == R.id.btnUebersicht) {
 			startActivity(new Intent(this, UebersichtActivity.class));
+
+                //UebersichtActivity pie = new UebersichtActivity();
+                //Intent lineIntent = pie.getIntent(this);
+                //startActivity(lineIntent);
+
+
 		}
 		else if(view.getId() == R.id.btnWorkout) {
 			startActivity(new Intent(this, WorkoutActivity.class));
