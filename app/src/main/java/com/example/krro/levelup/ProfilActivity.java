@@ -8,8 +8,8 @@ import android.widget.Button;
 
 public class ProfilActivity extends Activity {
 
-    private DBHelper dbHelper = new DBHelper(getApplication());
-    private SQLiteDatabase db = dbHelper.getWritableDatabase();
+   // private DBHelper dbHelper = new DBHelper(getApplication());
+    //private SQLiteDatabase db = dbHelper.getWritableDatabase();
 
 
 	@Override

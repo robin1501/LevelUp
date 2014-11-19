@@ -37,20 +37,20 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_weightSum="2">
+    android:weightSum="2">
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Name:"
-        android:id="@+id/textView5"
+        android:id="@+id/textViewName"
         android:textSize="25dp" />
 
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/editTextName"
             android:layout_weight="1" />
 
 
@@ -64,20 +64,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weightSum="2">
+        android:weightSum="2">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Alter:"
-            android:id="@+id/textView5"
+            android:id="@+id/textViewAlter"
             android:textSize="25dp" />
 
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/editTextAlter"
             android:layout_weight="1" />
 
 
@@ -91,20 +91,20 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_weightSum="2">
+    android:weightSum="2">
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Größe:"
-        android:id="@+id/textView5"
+        android:id="@+id/textViewGröße"
         android:textSize="25dp" />
 
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/editTextGröße"
         android:layout_weight="1" />
 
 
@@ -118,20 +118,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weightSum="2">
+        android:weightSum="2">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Gewicht:"
-            android:id="@+id/textView5"
+            android:id="@+id/textViewGewicht"
             android:textSize="25dp" />
 
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/editTextGewicht"
             android:layout_weight="1" />
 
 
@@ -145,20 +145,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weightSum="2">
+        android:weightSum="2">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Wunschgewicht:"
-            android:id="@+id/textView5"
+            android:id="@+id/textViewWunschgewicht"
             android:textSize="25dp" />
 
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/editTextWunschgewicht"
             android:layout_weight="1" />
 
 
