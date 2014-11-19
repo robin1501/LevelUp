@@ -17,8 +17,14 @@ public class DBHelper extends SQLiteOpenHelper {
             + "u_id integer primary key autoincrement, "
             + "beschreibung text not null"
             + "bild text not null, "
-            + "zeit int not null, "
             + "info text);";
+
+    private static final String INSERT_UEBUNG = "INSERT INTO uebungen "
+            + "(beschreibung, bild, info) VALUES "
+            + "('Bankdrücken', '', ''), "
+            + "('Sit Ups', '', 'Beine anwinkeln'), "
+            + "('Beinpresse', '', 'Winkel auf 40 Grad stellen'), "
+            + "('Pull Ups', '', '');";
 
     private static final String TABLE_WORKOUT_HEAD = "create table workout ("
             + "wh_id integer primary key autoincrement, "
@@ -48,6 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(TABLE_UEBUNG);
+        database.execSQL(INSERT_UEBUNG);
         database.execSQL(TABLE_WORKOUT_HEAD);
         database.execSQL(TABLE_WORKOUT_POS);
         database.execSQL(TABLE_PROFIL);

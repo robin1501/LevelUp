@@ -10,5 +10,6 @@
     <string name="kalender">Kalender</string>
     <string name="einstellungen">Einstellungen</string>
     <string name="bearbeiten">Bearbeiten</string>
+    <string name="neueUebung">Neue Übung hinzufügen</string>
 
 </resources>
