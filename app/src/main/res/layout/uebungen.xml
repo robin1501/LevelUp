@@ -37,6 +37,6 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/neueUebung" />
+        android:layout_above="@+id/listUebungen" />
 
 </RelativeLayout>

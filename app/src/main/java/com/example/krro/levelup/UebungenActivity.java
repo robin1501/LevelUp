@@ -7,18 +7,23 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class UebungenActivity extends ListActivity {
+public class UebungenActivity extends Activity {
 
-    private DBHelper dbHelper = new DBHelper(getApplication());
+    private DBHelper dbHelper = new DBHelper(this);
     private SQLiteDatabase db = dbHelper.getReadableDatabase();
 
     ArrayList<String> listeUebungen = new ArrayList<String>();
     ArrayAdapter<String> adapter;
+
+    ListView lvUebungen = (ListView)findViewById(R.id.listUebungen);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +43,17 @@ public class UebungenActivity extends ListActivity {
         adapter=new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 listeUebungen);
-        setListAdapter(adapter);
+        lvUebungen.setAdapter(adapter);
 
         cursor.close();
         db.close();
+
+        lvUebungen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                startActivity(new Intent(UebungenActivity.this, UebungenDetail.class));
+            }
+        });
 
         Button neueUebung = (Button)findViewById(R.id.neueUebung);
         neueUebung.setOnClickListener(new View.OnClickListener() {
