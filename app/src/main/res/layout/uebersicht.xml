@@ -14,91 +14,138 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+
+    <LinearLayout
+        android:id="@+id/chart"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_below="@+id/uebersichtTv"
+        android:layout_above="@+id/uBisErl">
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Bisher Erledigt:"
-        android:id="@+id/uebersichtTv2"
-        android:layout_below="@+id/uebersichtTv"
-        android:layout_alignRight="@+id/uebersichtTv"
-        android:layout_alignEnd="@+id/uebersichtTv"
-        android:layout_marginRight="47dp"
-        android:layout_marginTop="172dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Zahl"
-        android:id="@+id/uebersichtTv3"
-        android:layout_marginLeft="54dp"
-        android:layout_alignTop="@+id/uebersichtTv2"
-        android:layout_alignLeft="@+id/uebersichtTv"
-        android:layout_alignStart="@+id/uebersichtTv" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Letztes Workout:"
-        android:id="@+id/uebersichtTv4"
-        android:layout_below="@+id/uebersichtTv2"
-        android:layout_toLeftOf="@+id/uebersichtTv3"
-        android:layout_toStartOf="@+id/uebersichtTv3"
-        android:layout_marginTop="92dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Nächstes Workout:"
-        android:id="@+id/uebersichtTv6"
-        android:layout_marginTop="31dp"
-        android:layout_below="@+id/uebersichtTv4"
-        android:layout_alignLeft="@+id/uebersichtTv4"
-        android:layout_alignStart="@+id/uebersichtTv4" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Aktueller BMI:"
-        android:id="@+id/uebersichtTv8"
-        android:layout_below="@+id/uebersichtTv6"
-        android:layout_alignLeft="@+id/uebersichtTv6"
-        android:layout_alignStart="@+id/uebersichtTv6"
-        android:layout_marginTop="29dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Datum"
-        android:id="@+id/uebersichtTv5"
-        android:layout_alignTop="@+id/uebersichtTv4"
-        android:layout_toRightOf="@+id/uebersichtTv6"
-        android:layout_toEndOf="@+id/uebersichtTv6" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Datum"
-        android:id="@+id/uebersichtTv7"
-        android:layout_toEndOf="@+id/uebersichtTv6"
-        android:layout_alignTop="@+id/uebersichtTv6"
-        android:layout_alignLeft="@+id/uebersichtTv3"
-        android:layout_alignStart="@+id/uebersichtTv3" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Zahl"
-        android:id="@+id/uebersichtTv9"
-        android:layout_alignTop="@+id/uebersichtTv8"
+        android:id="@+id/uBisErl"
+        android:layout_marginBottom="194dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/uebersichtTv"
         android:layout_alignEnd="@+id/uebersichtTv" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Zahl"
+        android:id="@+id/uProzent"
+        android:layout_alignBottom="@+id/uBisErl"
+        android:layout_toRightOf="@+id/uBisErl"
+        android:layout_toEndOf="@+id/uBisErl" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:weightSum="2"
+    android:id="@+id/linearLayout"
+    android:layout_below="@+id/uProzent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Letztes Workout:"
+        android:id="@+id/uLetWor"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Datum"
+        android:id="@+id/uLetWorDat"
+        android:layout_below="@id/uProzent"
+        android:layout_alignTop="@+id/uLetWor"
+        android:layout_alignLeft="@+id/uebersichtTv"
+        android:layout_alignStart="@+id/uebersichtTv"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="2"
+        android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Nächstes Workout:"
+        android:id="@+id/uNaeWor"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_vertical"
+         />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Datum"
+        android:id="@+id/uNaeWorDat"
+        android:layout_below="@id/uProzent"
+        android:layout_alignTop="@+id/uLetWor"
+        android:layout_alignLeft="@+id/uebersichtTv"
+        android:layout_alignStart="@+id/uebersichtTv"
+        android:layout_gravity="center_vertical"
+         />
+    </LinearLayout>
+
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="2"
+        android:id="@+id/linearLayout3"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="BMI:"
+        android:id="@+id/uBmi"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Zahl"
+        android:id="@+id/uBmiZah"
+        android:layout_below="@id/uProzent"
+        android:layout_alignTop="@+id/uLetWor"
+        android:layout_alignLeft="@+id/uebersichtTv"
+        android:layout_alignStart="@+id/uebersichtTv"
+        android:layout_gravity="center_vertical" />
+ </LinearLayout>
+
 </RelativeLayout>
+
+
