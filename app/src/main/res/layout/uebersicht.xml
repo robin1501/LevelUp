@@ -53,7 +53,9 @@
     android:id="@+id/linearLayout"
     android:layout_below="@+id/uProzent"
     android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true">
+    android:layout_alignParentStart="true"
+    android:background="@drawable/roundcorners">
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -63,7 +65,8 @@
         android:id="@+id/uLetWor"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center_vertical" />
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="0dp"
@@ -96,7 +99,7 @@
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center_vertical"
-         />
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="0dp"
@@ -120,7 +123,8 @@
         android:id="@+id/linearLayout3"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+     android:background="#ff90c9ff">
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -130,7 +134,8 @@
         android:id="@+id/uBmi"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center_vertical" />
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="0dp"
