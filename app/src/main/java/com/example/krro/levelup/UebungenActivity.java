@@ -17,8 +17,14 @@ import java.util.ArrayList;
 
 public class UebungenActivity extends Activity {
 
-    private DBHelper dbHelper = new DBHelper(this);
-    private SQLiteDatabase db = dbHelper.getReadableDatabase();
+    private DBHelper dbHelper = new DBHelper(getApplication());
+    private SQLiteDatabase db;
+
+    public void open() throws SQLException {
+        db = dbHelper.getReadableDatabase();
+    }
+
+
 
     ArrayList<String> listeUebungen = new ArrayList<String>();
     ArrayAdapter<String> adapter;
@@ -29,6 +35,12 @@ public class UebungenActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.uebungen);
+
+        try {
+            open();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         String query = "SELECT beschreibung FROM uebungen;";
         Cursor cursor = db.rawQuery(query, null);
