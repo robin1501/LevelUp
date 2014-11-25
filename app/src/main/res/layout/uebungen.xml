@@ -32,11 +32,10 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="377dp"
-        android:id="@+id/listView"
+        android:id="@+id/listUebungen"
         android:choiceMode="singleChoice"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/neueUebung" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

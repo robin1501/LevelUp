@@ -4,16 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editText1"
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:text="Kalender" >
+        android:onClick="onClick"
+        android:text="Create Event" />
 
-        <requestFocus />
-    </EditText>
-
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/calendarView2"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

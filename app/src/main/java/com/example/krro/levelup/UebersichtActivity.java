@@ -21,11 +21,11 @@ import org.achartengine.renderer.SimpleSeriesRenderer;
 public class UebersichtActivity extends Activity {
 
 
-    private static int[] COLORS = new int[] { Color.GREEN, Color.BLUE,Color.MAGENTA, Color.CYAN };
+    private static int[] COLORS = new int[] { Color.BLUE, Color.RED,};
 
-    private static double[] VALUES = new double[] { 10, 11, 12, 13 };
+    private static double[] VALUES = new double[] { 70, 30,};
 
-    private static String[] NAME_LIST = new String[] { "A", "B", "C", "D" };
+    private static String[] NAME_LIST = new String[] { "Erledigt", "Offen", };
 
     private CategorySeries mSeries = new CategorySeries("");
 
