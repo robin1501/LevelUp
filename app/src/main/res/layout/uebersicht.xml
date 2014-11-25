@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/Layout">
+    android:id="@+id/Layout"
+    android:background="#3364D6">
 
 
     <TextView
@@ -54,7 +55,7 @@
     android:layout_below="@+id/uProzent"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
-    android:background="@drawable/roundcorners">
+    android:background="#578FFF">
 
     <TextView
         android:layout_width="0dp"
@@ -88,7 +89,8 @@
         android:id="@+id/linearLayout2"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        >
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -124,7 +126,7 @@
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-     android:background="#ff90c9ff">
+        android:background="#578FFF">
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:id="@+id/sap">
+    android:id="@+id/sap"
+    android:background="#3364D6">
 
     <TextView
         android:layout_width="match_parent"
@@ -37,7 +38,7 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@drawable/roundcorners"
+    android:background="#578FFF"
     android:weightSum="2">
     <TextView
         android:layout_width="0dp"
@@ -60,7 +61,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:weightSum="2">
+        android:weightSum="2"
+        android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -82,7 +84,7 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@drawable/roundcorners"
+    android:background="#578FFF"
     android:weightSum="2">
     <TextView
         android:layout_width="0dp"
@@ -105,7 +107,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:weightSum="2">
+        android:weightSum="2"
+        android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -127,7 +130,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/roundcorners"
+        android:background="#578FFF"
         android:weightSum="2">
         <TextView
             android:layout_width="0dp"
@@ -157,7 +160,7 @@
         android:text="Save changes"
 
         android:textSize="30sp"
-        android:background="@drawable/roundcorners"
+        android:background="#578FFF"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:shadowColor="#A8A8A8"
