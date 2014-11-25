@@ -15,35 +15,29 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
-            + "u_id integer primary key AUTO_INCREMENT, "
+            + "u_id integer primary key, "
             + "beschreibung text not null, "
             + "bild text not null, "
             + "info text);";
 
-    private static final String INSERT_UEBUNG = "INSERT INTO uebungen "
-            + "(beschreibung, bild, info) VALUES "
-            + "('Bankdrücken', '', ''), "
-            + "('Sit Ups', '', 'Beine anwinkeln'), "
-            + "('Beinpresse', '', 'Winkel auf 40 Grad stellen'), "
-            + "('Pull Ups', '', '');";
-
     private static final String TABLE_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS workouthead ("
-            + "wh_id integer primary key AUTO_INCREMENT, "
+            + "wh_id integer primary key, "
             + "beschreibung text not null, "
             + "datum date not null);";
 
     private static final String TABLE_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS workoutpos ("
-            + "wh_id integer primary key, "
-            + "wp_id integer primary key AUTO_INCREMENT, "
+            + "wh_id integer, "
+            + "wp_id integer, "
             + "u_id integer not null, "
             + "gewicht integer not null, "
             + "wiederholungen integer not null, "
-            + "saetze integer not null);";
+            + "saetze integer not null, "
+            + "PRIMARY KEY(wh_id, wp_id));";
 
     private static final String TABLE_PROFIL = "CREATE TABLE IF NOT EXISTS profil ("
-            + "p_id integer primary key AUTO_INCREMENT, "
+            + "p_id integer primary key, "
             + "name text, "
-            + "alter int, "
+            + "age integer, "
             + "gewicht integer, "
             + "groesse integer, "
             + "geschlecht char(1), "
@@ -55,13 +49,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        Log.d(TABLE_UEBUNG, "test");
         database.execSQL(TABLE_UEBUNG);
-/*        database.execSQL(INSERT_UEBUNG);
+//        database.execSQL(INSERT_UEBUNG);
         database.execSQL(TABLE_WORKOUT_HEAD);
         database.execSQL(TABLE_WORKOUT_POS);
         database.execSQL(TABLE_PROFIL);
-*/    }
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
