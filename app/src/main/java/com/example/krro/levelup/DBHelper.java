@@ -50,7 +50,6 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(TABLE_UEBUNG);
-//        database.execSQL(INSERT_UEBUNG);
         database.execSQL(TABLE_WORKOUT_HEAD);
         database.execSQL(TABLE_WORKOUT_POS);
         database.execSQL(TABLE_PROFIL);
