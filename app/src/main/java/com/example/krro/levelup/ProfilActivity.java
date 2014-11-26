@@ -8,11 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ProfilActivity extends Activity {
 
-    private DBHelper dbHelper = new DBHelper(getApplication());
-    private SQLiteDatabase db = dbHelper.getWritableDatabase();
+    private DBHelper dbHelper;
+    private SQLiteDatabase db;
 
     Cursor cursor;
 
@@ -20,6 +21,9 @@ public class ProfilActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.profil);
+
+        dbHelper = new DBHelper(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
 
 
 
@@ -50,13 +54,20 @@ public class ProfilActivity extends Activity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
            public void onClick(View v) {
+                EditText name = (EditText)findViewById(R.id.editTextName);
+                EditText alter = (EditText)findViewById(R.id.editTextAlter);
+                EditText gewicht = (EditText)findViewById(R.id.editTextGewicht);
+                EditText groesse = (EditText)findViewById(R.id.editTextGröße);
+                //EditText geschlecht = (EditText)findViewById(R.id.editTextGeschlecht);
+                EditText wunschgewicht = (EditText)findViewById(R.id.editTextWunschgewicht);
+
                 ContentValues args = new ContentValues();
-                args.put("name", R.id.editTextName);
-                args.put("age", R.id.editTextAlter);
-                args.put("gewicht", R.id.editTextGewicht);
-                args.put("groesse", R.id.editTextGröße);
-                //args.put("geschlecht", R.id.editTextGeschlecht);
-                args.put("wunschgewicht", R.id.editTextWunschgewicht);
+                args.put("name", name.getText().toString());
+                args.put("age", alter.getText().toString());
+                args.put("gewicht", gewicht.getText().toString());
+                args.put("groesse", groesse.getText().toString());
+                //args.put("geschlecht", geschlecht.getText().toString());
+                args.put("wunschgewicht", wunschgewicht.getText().toString());
 
 
                 if(cursor.getCount() == 0)
@@ -64,7 +75,8 @@ public class ProfilActivity extends Activity {
                     db.insert("profil", null, args);
                 }
                 else {
-                    db.update("profil", args, "p_id = 0", null);
+                    db.update("profil", args, "p_id = 1", null);
+                    Toast.makeText(getApplicationContext(), "Änderungen gespeichert",Toast.LENGTH_SHORT).show();
                 }
             }
         });
