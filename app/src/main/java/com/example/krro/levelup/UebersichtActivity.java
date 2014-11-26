@@ -3,12 +3,15 @@ package com.example.krro.levelup;
 import android.app.Activity;
 //import android.content.Context;
 //import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 //import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.achartengine.ChartFactory;
@@ -33,10 +36,18 @@ public class UebersichtActivity extends Activity {
 
     private GraphicalView mChartView;
 
+    private DBHelper dbHelper;
+    private SQLiteDatabase db;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uebersicht);
+
+        dbHelper = new DBHelper(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
 
         mRenderer.setApplyBackgroundColor(true);
         //mRenderer.setBackgroundColor(Color.argb(100, 50, 50, 50));
@@ -104,5 +115,19 @@ public class UebersichtActivity extends Activity {
         else {
             mChartView.repaint();
         }
+
+        Cursor cursor = db.query("profil", new String[] { "p_id",
+                        "name", "age" , "gewicht", "groesse", "wunschgewicht" }, "p_id" + "=?",
+                new String[] { String.valueOf("p_id") }, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+        TextView bmi = (TextView)findViewById(R.id.uBmiZah);
+
+        Toast.makeText(getApplicationContext(), cursor.getString(0),Toast.LENGTH_SHORT).show();
+
+       // bmi.setText(cursor.getString(3).toString());
+
     }
+
+
 }
