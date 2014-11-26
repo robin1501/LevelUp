@@ -17,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
             + "u_id integer primary key, "
             + "beschreibung text not null, "
-            + "bild text not null, "
+            + "bild text default '@drawable/noimage.jpg', "
             + "info text);";
 
     private static final String TABLE_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS workouthead ("
