@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Mein Profil"
+        android:textColor="#FFFFFF"
         android:id="@+id/textView2"
         android:textSize="40dp"
         android:layout_gravity="bottom|top"
@@ -46,6 +47,7 @@
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Name:"
+        android:textColor="#FFFFFF"
         android:id="@+id/textViewName"
         android:textSize="25dp" />
 
@@ -58,6 +60,7 @@
 
         ></LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -69,6 +72,7 @@
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Alter:"
+            android:textColor="#FFFFFF"
             android:id="@+id/textViewAlter"
             android:textSize="25dp" />
 
@@ -92,6 +96,7 @@
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Größe:"
+        android:textColor="#FFFFFF"
         android:id="@+id/textViewGröße"
         android:textSize="25dp" />
 
@@ -115,6 +120,7 @@
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Gewicht:"
+            android:textColor="#FFFFFF"
             android:id="@+id/textViewGewicht"
             android:textSize="25dp" />
 
@@ -138,6 +144,7 @@
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Wunschgewicht:"
+            android:textColor="#FFFFFF"
             android:id="@+id/textViewWunschgewicht"
             android:textSize="25dp" />
 
@@ -158,7 +165,7 @@
         android:id="@+id/angry_btn"
 
         android:text="Save changes"
-
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:background="#578FFF"
         android:layout_width="match_parent"

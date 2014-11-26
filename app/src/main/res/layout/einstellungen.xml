@@ -41,7 +41,6 @@
         android:text="Töne"
         android:textColor="#FFFFFF"
         android:id="@+id/switch1"
-
         android:checked="false"
         android:background="#578FFF"
         android:layout_gravity="center_vertical" />
