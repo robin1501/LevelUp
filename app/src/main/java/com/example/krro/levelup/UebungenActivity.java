@@ -32,56 +32,52 @@ public class UebungenActivity extends Activity {
         db = dbHelper.getWritableDatabase();
         lvUebungen = (ListView)findViewById(R.id.listUebungen);
 
-        String query = "SELECT beschreibung FROM uebungen;";
+        String query = "SELECT u_id, beschreibung, bild, info FROM uebungen;";
         Cursor cursor = db.rawQuery(query, null);
 
-        if(cursor.getCount() != 0)
+        if(cursor.getCount() == 0)
         {
-            db.delete("uebungen", null, null);
-            final String INSERT_UEBUNG = "INSERT INTO uebungen "
-                    + "(beschreibung, bild, info) VALUES "
-                    + "('Bankdrücken', '', ''), "
-                    + "('Sit Ups', '', 'Beine anwinkeln'), "
-                    + "('Beinpresse', '', 'Winkel auf 40 Grad stellen'), "
-                    + "('Pull Ups', '', '');";
+            //db.delete("uebungen", null, null);
 
-            //db.rawQuery(INSERT_UEBUNG, null);
             ContentValues values = new ContentValues();
             values.put("beschreibung", "Bankdrücken");
-            values.put("bild", "");
-            values.put("info", "");
+            values.put("bild", "@drawable/noimage.jpg");
+            values.put("info", "Test Bankdrücken");
             db.insert("uebungen", null, values);
-            values.clear();
             values.put("beschreibung", "Sit Ups");
-            values.put("bild", "");
+            values.put("bild", "@drawable/noimage.jpg");
             values.put("info", "Beine anwinkeln");
             db.insert("uebungen", null, values);
-            values.clear();
             values.put("beschreibung", "Beinpresse");
-            values.put("bild", "");
+            values.put("bild", "@drawable/noimage.jpg");
             values.put("info", "Winkel auf 40 Grad stellen");
             db.insert("uebungen", null, values);
-            values.clear();
             values.put("beschreibung", "Pull Ups");
-            values.put("bild", "");
-            values.put("info", "");
+            values.put("bild", "@drawable/noimage.jpg");
+            values.put("info", "Test Pull Up");
             db.insert("uebungen", null, values);
             cursor = db.rawQuery(query, null);
         }
 
-        ArrayList<String> listeUebungen = new ArrayList<String>();
+        final ArrayList<Integer> arrID = new ArrayList<Integer>();
+        final ArrayList<String> arrBeschreibung = new ArrayList<String>();
+        final ArrayList<String> arrBild = new ArrayList<String>();
+        final ArrayList<String> arrInfo = new ArrayList<String>();
         ArrayAdapter<String> adapter;
 
         cursor.moveToFirst();
         while(!cursor.isAfterLast())
         {
-            listeUebungen.add(cursor.getString(0));
+            arrID.add(cursor.getInt(0));
+            arrBeschreibung.add(cursor.getString(1));
+            arrBild.add(cursor.getString(2));
+            arrInfo.add(cursor.getString(3));
             cursor.moveToNext();
         }
 
         adapter=new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
-                listeUebungen);
+                arrBeschreibung);
         lvUebungen.setAdapter(adapter);
 
         cursor.close();
@@ -90,7 +86,12 @@ public class UebungenActivity extends Activity {
         lvUebungen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(UebungenActivity.this, UebungenDetail.class));
+                Intent uebungDetail = new Intent(UebungenActivity.this, UebungenDetail.class);
+                uebungDetail.putExtra("id", arrID.get(i));
+                uebungDetail.putExtra("beschreibung", arrBeschreibung.get(i));
+                uebungDetail.putExtra("bild", arrBild.get(i));
+                uebungDetail.putExtra("info", arrInfo.get(i));
+                startActivity(uebungDetail);
             }
         });
 
