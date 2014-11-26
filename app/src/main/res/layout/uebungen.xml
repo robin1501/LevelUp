@@ -3,13 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#3364D6">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/uebungen"
+        android:textSize="40dp"
+        android:textColor="#FFFFFF"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
@@ -27,7 +30,9 @@
         android:layout_alignParentStart="true"
         android:id="@+id/neueUebung"
         android:text="@string/neueUebung"
-        android:layout_marginTop="10dp" />
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:background="#578FFF"/>
 
     <ListView
         android:layout_width="match_parent"
@@ -36,6 +41,7 @@
         android:choiceMode="singleChoice"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#578FFF"/>
 
 </RelativeLayout>

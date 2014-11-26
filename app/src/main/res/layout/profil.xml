@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:id="@+id/sap">
+    android:id="@+id/sap"
+    android:background="#3364D6">
 
     <TextView
         android:layout_width="match_parent"
@@ -36,7 +37,8 @@
 
     <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
+    android:background="#578FFF"
     android:weightSum="2">
     <TextView
         android:layout_width="0dp"
@@ -56,15 +58,11 @@
 
         ></LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_gravity="right" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2">
+        android:layout_height="50dp"
+        android:weightSum="2"
+        android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -83,14 +81,10 @@
 
         ></LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_gravity="right" />
-
     <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
+    android:background="#578FFF"
     android:weightSum="2">
     <TextView
         android:layout_width="0dp"
@@ -110,15 +104,11 @@
 
     ></LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_gravity="right" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2">
+        android:layout_height="50dp"
+        android:weightSum="2"
+        android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -137,14 +127,10 @@
 
         ></LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_gravity="right" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="#578FFF"
         android:weightSum="2">
         <TextView
             android:layout_width="0dp"
@@ -164,18 +150,17 @@
 
         ></LinearLayout>
 
-    <Space
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_gravity="right" />
+        android:layout_height="150dp">
 
     <Button
         android:id="@+id/angry_btn"
 
         android:text="Save changes"
-        android:textColor="#FFFFFF"
+
         android:textSize="30sp"
-        android:background="@drawable/buttonshape"
+        android:background="#578FFF"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:shadowColor="#A8A8A8"
@@ -184,6 +169,8 @@
         android:shadowRadius="5"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom" />
+    </LinearLayout>
 
 </LinearLayout>
