@@ -45,7 +45,8 @@
             android:layout_height="match_parent"
             android:inputType="textMultiLine"
             android:id="@+id/txtInfo"
-            android:layout_weight="2" />
+            android:layout_weight="2"
+            android:gravity="top" />
         ></LinearLayout>
 
     <LinearLayout

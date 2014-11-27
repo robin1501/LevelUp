@@ -6,8 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class ProfilActivity extends Activity {
@@ -22,10 +24,13 @@ public class ProfilActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.profil);
 
+        Spinner spinner = (Spinner)findViewById(R.id.spGeschlecht);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.arrGeschlecht, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
-
-
 
         String query = "SELECT name, age, gewicht, groesse, geschlecht, wunschgewicht FROM profil";
         cursor = db.rawQuery(query, null);
@@ -41,8 +46,12 @@ public class ProfilActivity extends Activity {
             gewicht.setText(cursor.getString(2));
             EditText groesse = (EditText)findViewById(R.id.editTextGröße);
             groesse.setText(cursor.getString(3));
-            //EditText geschlecht = (EditText)findViewById(R.id.editTextGeschlecht);
-            //geschlecht.setText(cursor.getString(4));
+            Spinner geschlecht = (Spinner)findViewById(R.id.spGeschlecht);
+            for (int i=0;i<geschlecht.getCount();i++) {
+                if (geschlecht.getItemAtPosition(i).equals(cursor.getString(4))) {
+                    geschlecht.setSelection(i);
+                }
+            }
             EditText wunschgewicht = (EditText)findViewById(R.id.editTextWunschgewicht);
             wunschgewicht.setText(cursor.getString(5));
 
@@ -58,7 +67,7 @@ public class ProfilActivity extends Activity {
                 EditText alter = (EditText)findViewById(R.id.editTextAlter);
                 EditText gewicht = (EditText)findViewById(R.id.editTextGewicht);
                 EditText groesse = (EditText)findViewById(R.id.editTextGröße);
-                //EditText geschlecht = (EditText)findViewById(R.id.editTextGeschlecht);
+                Spinner geschlecht = (Spinner)findViewById(R.id.spGeschlecht);
                 EditText wunschgewicht = (EditText)findViewById(R.id.editTextWunschgewicht);
 
                 ContentValues args = new ContentValues();
@@ -66,7 +75,7 @@ public class ProfilActivity extends Activity {
                 args.put("age", alter.getText().toString());
                 args.put("gewicht", gewicht.getText().toString());
                 args.put("groesse", groesse.getText().toString());
-                //args.put("geschlecht", geschlecht.getText().toString());
+                args.put("geschlecht", geschlecht.getSelectedItem().toString());
                 args.put("wunschgewicht", wunschgewicht.getText().toString());
 
 

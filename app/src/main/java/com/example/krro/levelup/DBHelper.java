@@ -40,7 +40,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + "age integer, "
             + "gewicht integer, "
             + "groesse integer, "
-            + "geschlecht char(1), "
+            + "geschlecht text, "
             + "wunschgewicht integer);";
 
     public DBHelper(Context context) {
@@ -57,7 +57,15 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.d(TABLE_UEBUNG, "test2");
+        db.execSQL("DROP TABLE profil");
+        db.execSQL("DROP TABLE uebungen");
+        db.execSQL("DROP TABLE workouthead");
+        db.execSQL("DROP TABLE workoutpos");
+
+        db.execSQL(TABLE_UEBUNG);
+        db.execSQL(TABLE_WORKOUT_HEAD);
+        db.execSQL(TABLE_WORKOUT_POS);
+        db.execSQL(TABLE_PROFIL);
     }
 
 }

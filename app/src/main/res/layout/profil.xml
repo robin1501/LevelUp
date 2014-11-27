@@ -82,8 +82,30 @@
             android:id="@+id/editTextAlter"
             android:layout_weight="1" />
 
-
         ></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="2"
+        android:background="#578FFF">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Geschlecht:"
+            android:textColor="#FFFFFF"
+            android:id="@+id/textViewGeschlecht"
+            android:textSize="25dp" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spGeschlecht"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <LinearLayout
     android:layout_width="match_parent"
@@ -104,8 +126,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/editTextGröße"
-        android:layout_weight="1" />
+        android:gravity="right"
+        android:layout_weight="0.5" />
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="cm"
+            android:textColor="#FFFFFF"
+            android:id="@+id/textViewCM"
+            android:textSize="25dp" />
 
     ></LinearLayout>
 
@@ -128,8 +160,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/editTextGewicht"
-            android:layout_weight="1" />
+            android:gravity="right"
+            android:layout_weight="0.5" />
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="kg"
+            android:textColor="#FFFFFF"
+            android:id="@+id/textViewKG"
+            android:textSize="25dp" />
 
         ></LinearLayout>
 
@@ -152,7 +194,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/editTextWunschgewicht"
-            android:layout_weight="1" />
+            android:gravity="right"
+            android:layout_weight="0.5" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="kg"
+            android:textColor="#FFFFFF"
+            android:id="@+id/textViewKG2"
+            android:textSize="25dp" />
 
 
         ></LinearLayout>

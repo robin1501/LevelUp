@@ -11,5 +11,10 @@
     <string name="einstellungen">Einstellungen</string>
     <string name="bearbeiten">Bearbeiten</string>
     <string name="neueUebung">Neue Übung hinzufügen</string>
+    <string-array name="arrGeschlecht">
+        <item></item>
+        <item>männlich</item>
+        <item>weiblich</item>
+    </string-array>
 
 </resources>
