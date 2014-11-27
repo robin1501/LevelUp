@@ -45,6 +45,13 @@
         android:background="#578FFF"
         android:layout_gravity="center_vertical" />
    </LinearLayout>
+    <View
+        android:id="@+id/devider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
 
    <LinearLayout
@@ -52,7 +59,7 @@
         android:layout_height="60dp"
         android:weightSum="2"
         android:id="@+id/linearLayout2"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/devider"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#578FFF">
@@ -66,16 +73,24 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:checked="false"
-        android:background="#578FFF"/>
+        android:background="#578FFF"
+        android:layout_gravity="center_vertical" />
    </LinearLayout>
 
 
+    <View
+        android:id="@+id/devider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout2"
+        android:background="#FFFFFF"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:weightSum="2"
         android:id="@+id/linearLayout3"
-        android:layout_below="@+id/linearLayout2"
+        android:layout_below="@+id/devider2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#578FFF">
@@ -89,16 +104,24 @@
         android:layout_below="@+id/space3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#578FFF"/>
+        android:background="#578FFF"
+        android:layout_gravity="center_vertical" />
     </LinearLayout>
 
 
+    <View
+        android:id="@+id/devider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout3"
+        android:background="#FFFFFF"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:weightSum="2"
         android:id="@+id/linearLayout4"
-        android:layout_below="@+id/linearLayout3"
+        android:layout_below="@+id/devider3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#578FFF">
@@ -112,7 +135,8 @@
         android:layout_below="@+id/space4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#578FFF"/>
+        android:background="#578FFF"
+        android:layout_gravity="center_vertical" />
     </LinearLayout>
 
 </RelativeLayout>
