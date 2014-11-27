@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3364D6">
+    android:background="#3364D6"
+    >
 
     <TextView
         android:layout_width="fill_parent"
@@ -16,121 +17,19 @@
         android:textColor="#FFFFFF"
         android:gravity="center_horizontal" />
 
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Brust/Triceps"
-        android:textColor="#FFFFFF"
-        android:background="#578FFF"
-        android:id="@+id/button"
-        android:layout_above="@+id/button2"
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="377dp"
+        android:id="@+id/listWorkouts"
+        android:choiceMode="singleChoice"
+        android:layout_below="@+id/wHead"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        />
+
+        android:background="#578FFF"/>
 
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rücken/Biceps"
-        android:textColor="#FFFFFF"
-        android:background="#578FFF"
-        android:id="@+id/button2"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/add"
-        android:layout_alignEnd="@+id/add" />
-
-
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Beine"
-        android:textColor="#FFFFFF"
-        android:background="#578FFF"
-        android:id="@+id/button3"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-
-    <View
-        android:id="@+id/devider3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/button2"
-        android:background="#FFFFFF"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bauch/Stiernacken"
-        android:textColor="#FFFFFF"
-        android:background="#578FFF"
-        android:id="@+id/button4"
-        android:layout_below="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/add"
-        android:layout_alignEnd="@+id/add" />
-
-    <View
-        android:id="@+id/devider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/button"
-        android:background="#FFFFFF"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:textColor="#FFFFFF"
-        android:background="#578FFF"
-        android:id="@+id/add"
-        android:layout_above="@+id/button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-    <View
-        android:id="@+id/devider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/bearbeiten"
-        android:background="#FFFFFF"
-        />
-
-
-    <View
-        android:id="@+id/devider5"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/button3"
-        android:background="#FFFFFF"
-        />
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Workouts bearbeiten"
-        android:textColor="#FFFFFF"
-        android:background="#578FFF"
-        android:id="@+id/bearbeiten"
-        android:layout_above="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/add" />
 
 
 </RelativeLayout>
