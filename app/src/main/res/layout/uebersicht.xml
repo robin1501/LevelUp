@@ -145,7 +145,7 @@
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Zahl"
-        android:id="@+id/uBmiZah"
+        android:id="@+id/uBmiZahl"
         android:layout_below="@id/uProzent"
         android:layout_alignTop="@+id/uLetWor"
         android:layout_alignLeft="@+id/uebersichtTv"

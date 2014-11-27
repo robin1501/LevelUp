@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -71,6 +72,18 @@ public class UebersichtActivity extends Activity {
             mChartView.repaint();
         }
 
+        String query = "SELECT gewicht, groesse, age from profil";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        double gewicht = cursor.getInt(0);
+        double groesse = cursor.getInt(1)/100.0;
+        double bmi = Math.round(gewicht/(groesse*groesse)*100)/100.0;
+
+        TextView txtBmi = (TextView)findViewById(R.id.uBmiZahl);
+        txtBmi.setText(bmi+"");
     }
 
     @Override
@@ -116,16 +129,6 @@ public class UebersichtActivity extends Activity {
             mChartView.repaint();
         }
 
-        Cursor cursor = db.query("profil", new String[] { "p_id",
-                        "name", "age" , "gewicht", "groesse", "wunschgewicht" }, "p_id" + "=?",
-                new String[] { String.valueOf("p_id") }, null, null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
-        TextView bmi = (TextView)findViewById(R.id.uBmiZah);
-
-        Toast.makeText(getApplicationContext(), cursor.getString(0),Toast.LENGTH_SHORT).show();
-
-       // bmi.setText(cursor.getString(3).toString());
 
     }
 
