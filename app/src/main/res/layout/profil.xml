@@ -55,6 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/editTextName"
+            android:inputType="textPersonName"
             android:layout_weight="1" />
 
 
@@ -80,6 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/editTextAlter"
+            android:inputType="number"
             android:layout_weight="1" />
 
 
@@ -104,6 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/editTextGröße"
+        android:inputType="number"
         android:layout_weight="1" />
 
 
@@ -128,6 +131,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/editTextGewicht"
+            android:inputType="number"
             android:layout_weight="1" />
 
 
@@ -152,6 +156,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/editTextWunschgewicht"
+            android:inputType="number"
             android:layout_weight="1" />
 
 
