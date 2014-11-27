@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     android:id="@+id/sap"
     android:background="#3364D6">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Mein Profil"
         android:textColor="#FFFFFF"
@@ -18,38 +19,22 @@
         android:gravity="center_horizontal" />
 
 
-    <!--Button
-        android:id="@+id/angry_btn"
-
-        android:text="Save changes"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:background="@drawable/buttonshape"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        /-->
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="40dp" />
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="#578FFF"
-    android:weightSum="2">
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="#578FFF"
         android:layout_weight="1"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name:"
-        android:textColor="#FFFFFF"
-        android:id="@+id/textViewName"
-        android:textSize="25dp" />
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Name:"
+            android:textColor="#FFFFFF"
+            android:id="@+id/textViewName"
+            android:textSize="25dp" />
 
         <EditText
             android:layout_width="0dp"
@@ -62,9 +47,9 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:weightSum="2"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
@@ -86,9 +71,9 @@
         ></LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:weightSum="2"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
@@ -109,27 +94,27 @@
     </LinearLayout>
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="#578FFF"
-    android:weightSum="2">
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Größe:"
-        android:textColor="#FFFFFF"
-        android:id="@+id/textViewGröße"
-        android:textSize="25dp" />
+        android:background="#578FFF">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Größe:"
+            android:textColor="#FFFFFF"
+            android:id="@+id/textViewGröße"
+            android:textSize="25dp" />
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextGröße"
-        android:gravity="right"
-        android:inputType="number"
-        android:layout_weight="0.5" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextGröße"
+            android:gravity="right"
+            android:inputType="number"
+            android:layout_weight="0.5" />
 
         <TextView
             android:layout_width="0dp"
@@ -141,12 +126,12 @@
             android:id="@+id/textViewCM"
             android:textSize="25dp" />
 
-    ></LinearLayout>
+        ></LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:weightSum="2"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
@@ -179,10 +164,10 @@
         ></LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#578FFF"
-        android:weightSum="2">
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#578FFF">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -215,26 +200,28 @@
         ></LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#3364D6">
 
-    <Button
-        android:id="@+id/angry_btn"
+        <Button
+            android:id="@+id/angry_btn"
 
-        android:text="Save changes"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:background="#578FFF"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="bottom" />
+            android:text="Save changes"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="#578FFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="bottom" />
     </LinearLayout>
 
 </LinearLayout>
