@@ -11,9 +11,4 @@
         android:onClick="onClick"
         android:text="Create Event" />
 
-    <CalendarView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/calendarView2"
-        android:layout_gravity="center_horizontal" />
 </LinearLayout>
