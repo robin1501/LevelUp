@@ -45,6 +45,13 @@
 
         ></LinearLayout>
 
+    <View
+        android:id="@+id/devider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -70,6 +77,14 @@
 
         ></LinearLayout>
 
+    <View
+        android:id="@+id/devider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
@@ -92,6 +107,14 @@
             android:layout_weight="1" />
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/devider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -128,6 +151,14 @@
 
         ></LinearLayout>
 
+    <View
+        android:id="@+id/devider6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
@@ -162,6 +193,14 @@
             android:textSize="25dp" />
 
         ></LinearLayout>
+
+    <View
+        android:id="@+id/devider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"

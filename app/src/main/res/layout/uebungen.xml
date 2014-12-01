@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     android:background="#3364D6">
 
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/uebungen"
         android:textSize="40dp"
@@ -19,21 +20,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/neueUebung"
-        android:text="@string/neueUebung"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="10dp"
-        android:background="#578FFF"/>
 
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="#578FFF"
+        android:layout_weight="4">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="377dp"
@@ -44,4 +37,39 @@
         android:layout_alignParentStart="true"
         android:background="#578FFF"/>
 
-</RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="#3364D6"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="#578FFF"
+        android:layout_weight="0.5"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/angry_btn"
+            android:text="Neue Übung hinzufügen"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="#578FFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
