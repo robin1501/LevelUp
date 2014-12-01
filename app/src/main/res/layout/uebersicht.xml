@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/Layout"
-    android:background="#3364D6">
+    android:background="@drawable/iczedwhn">
 
 
     <TextView
@@ -59,7 +59,7 @@
     android:layout_below="@+id/uProzent"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
-    android:background="#578FFF">
+    >
 
     <TextView
         android:layout_width="0dp"
@@ -103,7 +103,7 @@
         android:layout_below="@+id/devider"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#578FFF"
+
         >
     <TextView
         android:layout_width="0dp"
@@ -148,7 +148,7 @@
         android:layout_below="@+id/devider2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#578FFF">
+        >
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
