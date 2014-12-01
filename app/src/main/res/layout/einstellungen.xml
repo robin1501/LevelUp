@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:id="@+id/layout"
-    android:background="#3364D6">
+    android:background="@drawable/iczedwhn">
 
     <TextView
         android:layout_width="fill_parent"
@@ -22,7 +22,6 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:background="#578FFF"
         android:layout_weight="1">
 
     <Switch
@@ -32,7 +31,6 @@
         android:textColor="#FFFFFF"
         android:id="@+id/switch1"
         android:checked="false"
-        android:background="#578FFF"
         android:layout_gravity="center_vertical" />
    </LinearLayout>
 
@@ -48,7 +46,6 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:background="#578FFF"
         android:layout_weight="1">
     <Switch
         android:layout_width="match_parent"
@@ -60,7 +57,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:checked="false"
-        android:background="#578FFF"
         android:layout_gravity="center_vertical" />
    </LinearLayout>
 
@@ -76,7 +72,6 @@
     <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="0dp"
-    android:background="#578FFF"
     android:layout_weight="1">
     <Switch
         android:layout_width="match_parent"
@@ -88,7 +83,6 @@
         android:layout_below="@+id/space3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#578FFF"
         android:layout_gravity="center_vertical" />
     </LinearLayout>
 
@@ -104,7 +98,6 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:background="#578FFF"
         android:layout_weight="1">
     <Switch
         android:layout_width="match_parent"
@@ -116,25 +109,22 @@
         android:layout_below="@+id/space4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#578FFF"
         android:layout_gravity="center_vertical" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:background="#3364D6"
-        android:layout_weight="1">
 
-        </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:background="#578FFF"
+        android:layout_weight="1">
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
         android:layout_weight=".5">
 
         <Button
             android:id="@+id/angry_btn"
-
             android:text="Save changes"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
