@@ -32,6 +32,7 @@
     <string name="bauch">Bauch</string>
     <string name="schulter">Schulter</string>
     <string name="ruecken">Rücken</string>
+    <string name="zahl">Zahl</string>
     <string name="speichern">Speichern</string>
     <string-array name="arrGeschlecht">
         <item>männlich</item>
