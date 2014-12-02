@@ -138,7 +138,7 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Brust"
+            android:text="Bauch"
             android:id="@+id/cbBauch"
             android:layout_weight="1" />
 
