@@ -1,68 +1,155 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/kollegah"
-    android:gravity="center_horizontal"
+    android:layout_height="fill_parent"
+    android:background="@drawable/iczedwhn"
+    android:orientation="vertical"
     tools:context="${packageName}.${activityClass}" >
 
-    <Button
-        android:id="@+id/btnUebersicht"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-        android:onClick="onButtonClick"
-        android:text="@string/uebersicht" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/app_name"
+        android:id="@+id/uProzent"
+        android:layout_gravity="bottom|top"
+        android:textSize="40dp"
+        android:textColor="#FFFFFF"
+        android:gravity="center_vertical|center_horizontal"
+        android:textStyle="bold"
+        android:visibility="visible" />
 
-    <Button
-        android:id="@+id/btnWorkout"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnUebersicht"
+            android:text="@string/uebersicht"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="@android:color/transparent"
+            android:onClick="onButtonClick"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+    <View
+        android:id="@+id/devider"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnUebersicht"
-        android:layout_marginTop="15dp"
-        android:onClick="onButtonClick"
-        android:text="@string/workout" />
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
-    <Button
-        android:id="@+id/btnUebungen"
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnWorkout"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:onClick="onButtonClick"
+            android:text="@string/workout" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/devider1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnWorkout"
-        android:layout_marginTop="15dp"
-        android:onClick="onButtonClick"
-        android:text="@string/uebungen" />
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
-    <Button
-        android:id="@+id/btnProfil"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnUebungen"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:onClick="onButtonClick"
+            android:text="@string/uebungen" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/devider2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnUebungen"
-        android:layout_marginTop="15dp"
-        android:onClick="onButtonClick"
-        android:text="@string/profil" />
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
-    <Button
-        android:id="@+id/btnKalender"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnProfil"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:onClick="onButtonClick"
+            android:text="@string/profil" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/devider3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnProfil"
-        android:layout_marginTop="15dp"
-        android:onClick="onButtonClick"
-        android:text="@string/kalender" />
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
-    <Button
-        android:id="@+id/btnEinstellungen"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnKalender"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:onClick="onButtonClick"
+            android:text="@string/kalender" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/devider4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnKalender"
-        android:layout_marginTop="15dp"
-        android:onClick="onButtonClick"
-        android:text="@string/einstellungen" />
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <Button
+            android:id="@+id/btnEinstellungen"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:onClick="onButtonClick"
+            android:text="@string/einstellungen" />
+    </LinearLayout>
+
+</LinearLayout>
