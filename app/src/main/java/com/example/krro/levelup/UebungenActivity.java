@@ -41,19 +41,19 @@ public class UebungenActivity extends Activity {
 
             ContentValues values = new ContentValues();
             values.put("beschreibung", "Bankdrücken");
-            values.put("bild", "@drawable/noimage.jpg");
+            values.put("bild", "");
             values.put("info", "Test Bankdrücken");
             db.insert("uebungen", null, values);
             values.put("beschreibung", "Sit Ups");
-            values.put("bild", "@drawable/noimage.jpg");
+            values.put("bild", "");
             values.put("info", "Beine anwinkeln");
             db.insert("uebungen", null, values);
             values.put("beschreibung", "Beinpresse");
-            values.put("bild", "@drawable/noimage.jpg");
+            values.put("bild", "");
             values.put("info", "Winkel auf 40 Grad stellen");
             db.insert("uebungen", null, values);
             values.put("beschreibung", "Pull Ups");
-            values.put("bild", "@drawable/noimage.jpg");
+            values.put("bild", "");
             values.put("info", "Test Pull Up");
             db.insert("uebungen", null, values);
             cursor = db.rawQuery(query, null);
@@ -87,6 +87,7 @@ public class UebungenActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent uebungDetail = new Intent(UebungenActivity.this, UebungenDetail.class);
+                uebungDetail.putExtra("neu", false);
                 uebungDetail.putExtra("id", arrID.get(i));
                 uebungDetail.putExtra("beschreibung", arrBeschreibung.get(i));
                 uebungDetail.putExtra("bild", arrBild.get(i));
@@ -100,7 +101,9 @@ public class UebungenActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UebungenActivity.this, UebungenDetail.class));
+                Intent uebungDetail = new Intent(UebungenActivity.this, UebungenDetail.class);
+                uebungDetail.putExtra("neu", true);
+                startActivity(uebungDetail);
             }
         });
 	}

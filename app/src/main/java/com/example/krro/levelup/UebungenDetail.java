@@ -25,19 +25,31 @@ public class UebungenDetail extends Activity {
         setContentView(R.layout.uebungdetail);
 
         Intent uebungDetail = getIntent();
-        Integer id = uebungDetail.getIntExtra("id", 0);
-        String beschreibung = uebungDetail.getStringExtra("beschreibung");
-        String bild = uebungDetail.getStringExtra("bild");
-        Bitmap bmpBild = BitmapFactory.decodeFile("res/drawable/noimage.jpg");
-        String info = uebungDetail.getStringExtra("info");
+        boolean neueUebung = uebungDetail.getBooleanExtra("neu", false);
 
-        TextView tvUebung = (TextView)findViewById(R.id.tvUebung);
-        imgBild = (ImageView)findViewById(R.id.imgUebung);
-        EditText txtInfo = (EditText)findViewById(R.id.txtInfo);
+        TextView tvUebung = (TextView) findViewById(R.id.tvUebung);
+        imgBild = (ImageView) findViewById(R.id.imgUebung);
+        imgBild.setImageResource(R.drawable.noimage);
+        EditText txtInfo = (EditText) findViewById(R.id.txtInfo);
 
-        tvUebung.setText(beschreibung);
-        imgBild.setImageBitmap(bmpBild);
-        txtInfo.setText(info);
+        if(!neueUebung) {
+            Integer id = uebungDetail.getIntExtra("id", 0);
+            String beschreibung = uebungDetail.getStringExtra("beschreibung");
+            String bild = uebungDetail.getStringExtra("bild");
+            String info = uebungDetail.getStringExtra("info");
+
+            tvUebung.setText(beschreibung);
+            if (bild != "")
+            {
+                Bitmap bmpBild = BitmapFactory.decodeFile(bild);
+                imgBild.setImageBitmap(bmpBild);
+            }
+            txtInfo.setText(info);
+        }
+        else
+        {
+
+        }
 
         imgBild.setOnClickListener(new View.OnClickListener() {
             @Override
