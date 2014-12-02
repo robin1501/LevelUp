@@ -21,7 +21,11 @@
     <string name="letztes_workout">Letztes Workout</string>
     <string name="naechstes_workout">Nächstes Workout</string>
     <string name="bmi">Body Mass Index</string>
-
+    <string name="uebung">Übung</string>
+    <string name="info">Info</string>
+    <string name="wiederholungen">Wiederholungen</string>
+    <string name="saetze">Sätze</string>
+    <string name="muskelgruppen">Muskelgruppen</string>
 
     <string-array name="arrGeschlecht">
         <item>männlich</item>
