@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Workout"
+        android:text="@string/workout"
         android:id="@+id/wHead"
         android:layout_alignParentTop="true"
         android:textAlignment="center"

@@ -54,7 +54,7 @@
 
         <Button
             android:id="@+id/neueUebung"
-            android:text="Neue Übung"
+            android:text="@string/neueUebung"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:background="@android:color/transparent"
