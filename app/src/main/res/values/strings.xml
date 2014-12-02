@@ -17,7 +17,7 @@
     <string name="groeße">Größe</string>
     <string name="gewicht">Gewicht</string>
     <string name="wunschgewicht">Wunschgewicht</string>
-    <string name="bisher_erledigt">Bisher Erledigt</string>
+    <string name="bisher_erledigt:">Bisher Erledigt</string>
     <string name="letztes_workout">Letztes Workout</string>
     <string name="naechstes_workout">Nächstes Workout</string>
     <string name="bmi">Body Mass Index</string>
@@ -33,13 +33,6 @@
     <string name="schulter">Schulter</string>
     <string name="ruecken">Rücken</string>
     <string name="speichern">Speichern</string>
-
-
-
-
-
-
-
     <string-array name="arrGeschlecht">
         <item>männlich</item>
         <item>weiblich</item>
