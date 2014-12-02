@@ -57,7 +57,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/devider"
+        android:id="@+id/devider1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/linearLayout"
@@ -80,7 +80,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/devider"
+        android:id="@+id/devider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/linearLayout"
@@ -103,7 +103,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/devider"
+        android:id="@+id/devider3"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/linearLayout"
@@ -126,7 +126,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/devider"
+        android:id="@+id/devider4"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/linearLayout"
