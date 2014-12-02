@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Mein Profil"
+        android:text="@string/profil"
         android:textColor="#FFFFFF"
         android:id="@+id/textView2"
         android:textSize="40dp"
@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Name:"
+            android:text="@string/name"
             android:textColor="#FFFFFF"
             android:id="@+id/textViewName"
             android:textSize="25dp" />
@@ -62,7 +62,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Alter:"
+            android:text="@string/alter"
             android:textColor="#FFFFFF"
             android:id="@+id/textViewAlter"
             android:textSize="25dp" />
@@ -94,7 +94,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Geschlecht:"
+            android:text="@string/geschlecht"
             android:textColor="#FFFFFF"
             android:id="@+id/textViewGeschlecht"
             android:textSize="25dp" />
@@ -125,7 +125,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Größe:"
+            android:text="@string/groeße"
             android:textColor="#FFFFFF"
             android:id="@+id/textViewGröße"
             android:textSize="25dp" />
@@ -168,7 +168,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Gewicht:"
+            android:text="@string/gewicht"
             android:textColor="#FFFFFF"
             android:id="@+id/textViewGewicht"
             android:textSize="25dp" />
@@ -211,7 +211,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Wunschgewicht:"
+            android:text="@string/wunschgewicht"
             android:textColor="#FFFFFF"
             android:id="@+id/textViewWunschgewicht"
             android:textSize="25dp" />

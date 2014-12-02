@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
+    android:background="@drawable/iczedwhn"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
-        android:text="Übung"
+        android:text="@string/uebung"
+        android:textColor="#FFFFFF"
         android:id="@+id/tvUebung"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
@@ -37,7 +39,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Info:"
+            android:text="@string/info"
             android:id="@+id/tvInfo"
             android:textSize="25dp" />
 
@@ -61,7 +63,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Gewicht:"
+            android:text="@string/gewicht"
             android:id="@+id/tvGewicht"
             android:textSize="25dp" />
 
@@ -83,7 +85,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Wiederholungen:"
+            android:text="@string/wiederholungen"
             android:id="@+id/tvWiederholungen"
             android:textSize="25dp" />
 
@@ -105,7 +107,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Sätze:"
+            android:text="@string/saetze"
             android:id="@+id/tvSaetze"
             android:textSize="25dp" />
 
@@ -127,7 +129,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Muskelgruppen:"
+            android:text="@string/muskelgruppen"
             android:id="@+id/tvMuskelgruppen"
             android:textSize="25dp" />
 
