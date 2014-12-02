@@ -38,19 +38,22 @@ public class UebungenActivity extends Activity {
         {
             ContentValues values = new ContentValues();
             values.put("beschreibung", "Bankdrücken");
-            values.put("bild", "");
+            values.put("bizeps", 1);
+            values.put("brust", 1);
             values.put("info", "Test Bankdrücken");
             db.insert("uebungen", null, values);
             values.put("beschreibung", "Sit Ups");
-            values.put("bild", "");
+            values.put("bauch", 1);
             values.put("info", "Beine anwinkeln");
             db.insert("uebungen", null, values);
             values.put("beschreibung", "Beinpresse");
-            values.put("bild", "");
+            values.put("beine", 1);
             values.put("info", "Winkel auf 40 Grad stellen");
             db.insert("uebungen", null, values);
             values.put("beschreibung", "Pull Ups");
-            values.put("bild", "");
+            values.put("bizeps", 1);
+            values.put("brust", 1);
+            values.put("ruecken", 1);
             values.put("info", "Test Pull Up");
             db.insert("uebungen", null, values);
             cursor = db.rawQuery(query, null);
