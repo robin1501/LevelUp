@@ -28,7 +28,7 @@ public class UebungenDetail extends Activity {
         Integer id = uebungDetail.getIntExtra("id", 0);
         String beschreibung = uebungDetail.getStringExtra("beschreibung");
         String bild = uebungDetail.getStringExtra("bild");
-        Bitmap bmpBild = BitmapFactory.decodeFile("drawable/noimage.jpg");
+        Bitmap bmpBild = BitmapFactory.decodeFile("res/drawable/noimage.jpg");
         String info = uebungDetail.getStringExtra("info");
 
         TextView tvUebung = (TextView)findViewById(R.id.tvUebung);
