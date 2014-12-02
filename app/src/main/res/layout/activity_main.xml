@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/app_name"
         android:id="@+id/uProzent"
@@ -27,11 +27,18 @@
             android:text="@string/uebersicht"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@android:color/transparent"
             android:onClick="onButtonClick"
             android:layout_width="match_parent"
             android:layout_height="fill_parent" />
     </LinearLayout>
+    <View
+        android:id="@+id/devider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
 
     <LinearLayout
@@ -42,12 +49,20 @@
             android:id="@+id/btnWorkout"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:onClick="onButtonClick"
             android:text="@string/workout" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/devider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -57,12 +72,20 @@
             android:id="@+id/btnUebungen"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:onClick="onButtonClick"
             android:text="@string/uebungen" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/devider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -72,12 +95,20 @@
             android:id="@+id/btnProfil"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:onClick="onButtonClick"
             android:text="@string/profil" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/devider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -87,12 +118,20 @@
             android:id="@+id/btnKalender"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:onClick="onButtonClick"
             android:text="@string/kalender" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/devider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -104,7 +143,7 @@
             android:id="@+id/btnEinstellungen"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:onClick="onButtonClick"
