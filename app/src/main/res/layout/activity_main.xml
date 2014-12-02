@@ -13,7 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="30dp"
         android:onClick="onButtonClick"
-        android:text="@string/uebersicht" />
+        android:name="@string/uebersicht" />
 
     <Button
         android:id="@+id/btnWorkout"
