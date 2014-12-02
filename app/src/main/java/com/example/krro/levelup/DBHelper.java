@@ -18,6 +18,13 @@ public class DBHelper extends SQLiteOpenHelper {
             + "u_id integer primary key, "
             + "beschreibung text not null, "
             + "bild text not null, "
+            + "bauch integer not null (bauch IN (0,1)), "
+            + "bizeps integer not null (bizeps IN (0,1)), "
+            + "trizeps integer not null (trizeps IN (0,1)), "
+            + "brust integer not null (brust IN (0,1)), "
+            + "schulter integer not null (schulter IN (0,1)), "
+            + "ruecken integer not null (ruecken IN (0,1)), "
+            + "beine integer not null (beine IN (0,1)), "
             + "info text);";
 
     private static final String TABLE_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS workouthead ("
