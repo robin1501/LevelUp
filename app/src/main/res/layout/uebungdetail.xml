@@ -140,42 +140,42 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Brust"
+            android:text="@string/brust"
             android:id="@+id/cbBauch"
             android:layout_weight="1" />
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bizeps"
+                android:text="@string/bizeps"
                 android:id="@+id/cbBizeps"
                 android:layout_below="@+id/cbBauch"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trizeps"
+                android:text="@string/trizeps"
                 android:id="@+id/cbTrizeps"
                 android:layout_below="@+id/cbBizeps"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Brust"
+                android:text="@string/bauch"
                 android:id="@+id/cbBrust"
                 android:layout_below="@+id/cbTrizeps"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Schulter"
+                android:text="@string/schulter"
                 android:id="@+id/cbSchulter"
                 android:layout_below="@+id/cbBrust"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rücken"
+                android:text="@string/ruecken"
                 android:id="@+id/cbRuecken"
                 android:layout_below="@+id/cbSchulter"/>
 

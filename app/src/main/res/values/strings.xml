@@ -26,6 +26,16 @@
     <string name="wiederholungen">Wiederholungen</string>
     <string name="saetze">Sätze</string>
     <string name="muskelgruppen">Muskelgruppen</string>
+    <string name="brust">Brust</string>
+    <string name="bizeps">Bizeps</string>
+    <string name="trizeps">Trizeps</string>
+    <string name="bauch">Bauch</string>
+    <string name="schulter">Schulter</string>
+    <string name="ruecken">Rücken</string>
+
+
+
+
 
     <string-array name="arrGeschlecht">
         <item>männlich</item>
