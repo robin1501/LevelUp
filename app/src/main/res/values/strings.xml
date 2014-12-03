@@ -9,6 +9,8 @@
     <string name="profil">Mein Profil</string>
     <string name="kalender">Kalender</string>
     <string name="einstellungen">Einstellungen</string>
+    <string name="noProfil">Keine Profildaten</string>
+    <string name="noWorkout">Keine Workoutdaten</string>
     <string name="bearbeiten">Bearbeiten</string>
     <string name="neueUebung">Neue Übung hinzufügen</string>
     <string name="name">Name</string>

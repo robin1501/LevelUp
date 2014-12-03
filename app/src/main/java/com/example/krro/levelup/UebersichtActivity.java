@@ -75,15 +75,16 @@ public class UebersichtActivity extends Activity {
         String query = "SELECT gewicht, groesse, age from profil";
 
         Cursor cursor = db.rawQuery(query, null);
-        if (cursor != null)
+        if (cursor.getCount() != 0) {
             cursor.moveToFirst();
 
-        double gewicht = cursor.getInt(0);
-        double groesse = cursor.getInt(1)/100.0;
-        double bmi = Math.round(gewicht/(groesse*groesse)*100)/100.0;
+            double gewicht = cursor.getInt(0);
+            double groesse = cursor.getInt(1) / 100.0;
+            double bmi = Math.round(gewicht / (groesse * groesse) * 100) / 100.0;
 
-        TextView txtBmi = (TextView)findViewById(R.id.uBmiZahl);
-        txtBmi.setText(bmi+"");
+            TextView txtBmi = (TextView) findViewById(R.id.uBmiZahl);
+            txtBmi.setText(bmi + "");
+        }
     }
 
     @Override
