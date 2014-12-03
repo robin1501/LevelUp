@@ -11,7 +11,7 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "fitness.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 7;
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
@@ -26,6 +26,13 @@ public class DBHelper extends SQLiteOpenHelper {
             + "ruecken integer default 0 CHECK (ruecken IN (0,1)), "
             + "beine integer default 0 CHECK (beine IN (0,1)), "
             + "info text);";
+
+    private static final String INSERT_UEBUNG = "INSERT INTO uebungen "
+            + "(beschreibung, bauch, bizeps, trizeps, brust, schulter, ruecken, beine, info) VALUES "
+            + "('Bankdrücken', 0, 1, 0, 1, 0, 0, 0, ''), "
+            + "('Sit Ups', 1, 0, 0, 0, 0, 0, 0, 'Beine anwinkeln'), "
+            + "('Beinpresse', 0, 0, 0, 0, 0, 0, 1, 'Winkel auf 40 Grad stellen'), "
+            + "('Pull Ups', 0, 1, 0, 1, 0, 1, 0, '');";
 
     private static final String TABLE_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS workouthead ("
             + "wh_id integer primary key, "
@@ -57,6 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(TABLE_UEBUNG);
+        database.execSQL(INSERT_UEBUNG);
         database.execSQL(TABLE_WORKOUT_HEAD);
         database.execSQL(TABLE_WORKOUT_POS);
         database.execSQL(TABLE_PROFIL);
@@ -70,6 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE workoutpos");
 
         db.execSQL(TABLE_UEBUNG);
+        db.execSQL(INSERT_UEBUNG);
         db.execSQL(TABLE_WORKOUT_HEAD);
         db.execSQL(TABLE_WORKOUT_POS);
         db.execSQL(TABLE_PROFIL);

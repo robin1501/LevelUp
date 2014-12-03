@@ -17,13 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.http.util.ByteArrayBuffer;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.net.URI;
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
 
 public class UebungenDetail extends Activity {
 
@@ -66,12 +61,12 @@ public class UebungenDetail extends Activity {
         imgBild = (ImageView) findViewById(R.id.imgUebung);
         imgBild.setImageResource(R.drawable.noimage);
         cbBauch = (CheckBox)findViewById(R.id.cbBauch);
-        cbBizeps = (CheckBox)findViewById(R.id.cbBauch);
-        cbTrizeps = (CheckBox)findViewById(R.id.cbBauch);
-        cbBrust = (CheckBox)findViewById(R.id.cbBauch);
-        cbSchulter = (CheckBox)findViewById(R.id.cbBauch);
-        cbRuecken = (CheckBox)findViewById(R.id.cbBauch);
-        cbBeine = (CheckBox)findViewById(R.id.cbBauch);
+        cbBizeps = (CheckBox)findViewById(R.id.cbBizeps);
+        cbTrizeps = (CheckBox)findViewById(R.id.cbTrizeps);
+        cbBrust = (CheckBox)findViewById(R.id.cbBrust);
+        cbSchulter = (CheckBox)findViewById(R.id.cbSchulter);
+        cbRuecken = (CheckBox)findViewById(R.id.cbRuecken);
+        cbBeine = (CheckBox)findViewById(R.id.cbBeine);
         txtInfo = (EditText) findViewById(R.id.txtInfo);
 
         if(neueUebung) {
@@ -104,9 +99,9 @@ public class UebungenDetail extends Activity {
             {
                 ByteArrayInputStream in = new ByteArrayInputStream(bild);
                 Bitmap bmpBild = BitmapFactory.decodeStream(in);
-                //Bitmap mutableBitmap = bmpBild.copy(Bitmap.Config.ARGB_8888, true);
                 imgBild.setImageBitmap(bmpBild);
             }
+
             if (bauch == 0)
             {
                 cbBauch.setChecked(false);
@@ -188,6 +183,7 @@ public class UebungenDetail extends Activity {
                     if(bild != null) {
                         values.put("bild", bild);
                     }
+
                     if (cbBauch.isChecked())
                     {
                         values.put("bauch", 1);
@@ -196,6 +192,7 @@ public class UebungenDetail extends Activity {
                     {
                         values.put("bauch", 0);
                     }
+
                     if (cbBizeps.isChecked())
                     {
                         values.put("bizeps", 1);
@@ -204,6 +201,7 @@ public class UebungenDetail extends Activity {
                     {
                         values.put("bizeps", 0);
                     }
+
                     if (cbTrizeps.isChecked())
                     {
                         values.put("trizeps", 1);
@@ -212,6 +210,7 @@ public class UebungenDetail extends Activity {
                     {
                         values.put("trizeps", 0);
                     }
+
                     if (cbBrust.isChecked())
                     {
                         values.put("brust", 1);
@@ -220,6 +219,7 @@ public class UebungenDetail extends Activity {
                     {
                         values.put("brust", 0);
                     }
+
                     if (cbSchulter.isChecked())
                     {
                         values.put("schulter", 1);
@@ -228,6 +228,7 @@ public class UebungenDetail extends Activity {
                     {
                         values.put("schulter", 0);
                     }
+
                     if (cbRuecken.isChecked())
                     {
                         values.put("ruecken", 1);
@@ -236,6 +237,7 @@ public class UebungenDetail extends Activity {
                     {
                         values.put("ruecken", 0);
                     }
+
                     if (cbBeine.isChecked())
                     {
                         values.put("beine", 1);
@@ -244,9 +246,12 @@ public class UebungenDetail extends Activity {
                     {
                         values.put("beine", 0);
                     }
+
                     values.put("info", txtInfo.getText().toString());
-                    db.update("uebungen", values, "u_id = " + id, null);
-                    Toast.makeText(getApplicationContext(), "Änderungen gespeichert",Toast.LENGTH_SHORT).show();
+                    int ret = db.update("uebungen", values, "u_id = " + id, null);
+                    if(ret != 0) {
+                        Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
