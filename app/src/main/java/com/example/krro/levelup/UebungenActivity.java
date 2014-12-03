@@ -30,47 +30,11 @@ public class UebungenActivity extends Activity {
         db = dbHelper.getWritableDatabase();
         lvUebungen = (ListView)findViewById(R.id.listUebungen);
 
-        db.delete("uebungen", null, null);
         String query = "SELECT u_id, beschreibung FROM uebungen;";
         Cursor cursor = db.rawQuery(query, null);
 
-        if(cursor.getCount() == 0)
-        {
-            ContentValues values = new ContentValues();
-            values.put("beschreibung", "Bankdrücken");
-            values.put("bizeps", 1);
-            values.put("brust", 1);
-            values.put("info", "Test Bankdrücken");
-            db.insert("uebungen", null, values);
-            values.put("beschreibung", "Sit Ups");
-            values.put("bauch", 1);
-            values.put("info", "Beine anwinkeln");
-            db.insert("uebungen", null, values);
-            values.put("beschreibung", "Beinpresse");
-            values.put("beine", 1);
-            values.put("info", "Winkel auf 40 Grad stellen");
-            db.insert("uebungen", null, values);
-            values.put("beschreibung", "Pull Ups");
-            values.put("bizeps", 1);
-            values.put("brust", 1);
-            values.put("ruecken", 1);
-            values.put("info", "Test Pull Up");
-            db.insert("uebungen", null, values);
-
-            values.put("beschreibung", "Butterfly");
-            values.put("bizeps", 1);
-            values.put("brust", 1);
-            values.put("ruecken", 1);
-            values.put("info", "Test Butterfly");
-            db.insert("uebungen", null, values);
-
-            cursor = db.rawQuery(query, null);
-        }
-
         final ArrayList<Integer> arrID = new ArrayList<Integer>();
         final ArrayList<String> arrBeschreibung = new ArrayList<String>();
-        final ArrayList<String> arrBild = new ArrayList<String>();
-        final ArrayList<String> arrInfo = new ArrayList<String>();
         ArrayAdapter<String> adapter;
 
         cursor.moveToFirst();
