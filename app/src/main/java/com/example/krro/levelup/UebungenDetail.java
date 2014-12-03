@@ -57,7 +57,7 @@ public class UebungenDetail extends Activity {
         Intent uebungDetail = getIntent();
         final boolean neueUebung = uebungDetail.getBooleanExtra("neu", false);
 
-        TextView tvUebung = (TextView) findViewById(R.id.tvUebung);
+        final TextView tvUebung = (TextView) findViewById(R.id.tvUebung);
         imgBild = (ImageView) findViewById(R.id.imgUebung);
         imgBild.setImageResource(R.drawable.noimage);
         cbBauch = (CheckBox)findViewById(R.id.cbBauch);
@@ -173,81 +173,86 @@ public class UebungenDetail extends Activity {
         btnSpeichern.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(neueUebung)
-                {
 
+                ContentValues values = new ContentValues();
+                if(bild != null) {
+                    values.put("bild", bild);
+                }
+
+                if (cbBauch.isChecked())
+                {
+                    values.put("bauch", 1);
                 }
                 else
                 {
-                    ContentValues values = new ContentValues();
-                    if(bild != null) {
-                        values.put("bild", bild);
-                    }
+                    values.put("bauch", 0);
+                }
 
-                    if (cbBauch.isChecked())
-                    {
-                        values.put("bauch", 1);
-                    }
-                    else
-                    {
-                        values.put("bauch", 0);
-                    }
+                if (cbBizeps.isChecked())
+                {
+                    values.put("bizeps", 1);
+                }
+                else
+                {
+                    values.put("bizeps", 0);
+                }
 
-                    if (cbBizeps.isChecked())
-                    {
-                        values.put("bizeps", 1);
-                    }
-                    else
-                    {
-                        values.put("bizeps", 0);
-                    }
+                if (cbTrizeps.isChecked())
+                {
+                    values.put("trizeps", 1);
+                }
+                else
+                {
+                    values.put("trizeps", 0);
+                }
 
-                    if (cbTrizeps.isChecked())
-                    {
-                        values.put("trizeps", 1);
-                    }
-                    else
-                    {
-                        values.put("trizeps", 0);
-                    }
+                if (cbBrust.isChecked())
+                {
+                    values.put("brust", 1);
+                }
+                else
+                {
+                    values.put("brust", 0);
+                }
 
-                    if (cbBrust.isChecked())
-                    {
-                        values.put("brust", 1);
-                    }
-                    else
-                    {
-                        values.put("brust", 0);
-                    }
+                if (cbSchulter.isChecked())
+                {
+                    values.put("schulter", 1);
+                }
+                else
+                {
+                    values.put("schulter", 0);
+                }
 
-                    if (cbSchulter.isChecked())
-                    {
-                        values.put("schulter", 1);
-                    }
-                    else
-                    {
-                        values.put("schulter", 0);
-                    }
+                if (cbRuecken.isChecked())
+                {
+                    values.put("ruecken", 1);
+                }
+                else
+                {
+                    values.put("ruecken", 0);
+                }
 
-                    if (cbRuecken.isChecked())
-                    {
-                        values.put("ruecken", 1);
-                    }
-                    else
-                    {
-                        values.put("ruecken", 0);
-                    }
+                if (cbBeine.isChecked())
+                {
+                    values.put("beine", 1);
+                }
+                else
+                {
+                    values.put("beine", 0);
+                }
 
-                    if (cbBeine.isChecked())
-                    {
-                        values.put("beine", 1);
-                    }
-                    else
-                    {
-                        values.put("beine", 0);
-                    }
+                values.put("info", txtInfo.getText().toString());
 
-                    values.put("info", txtInfo.getText().toString());
+                if(neueUebung)
+                {
+                    beschreibung = tvUebung.getText().toString();
+                    values.put("beschreibung", beschreibung);
+                    db.insert("uebungen", null, values);
+                    Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
                     int ret = db.update("uebungen", values, "u_id = " + id, null);
                     if(ret != 0) {
                         Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();

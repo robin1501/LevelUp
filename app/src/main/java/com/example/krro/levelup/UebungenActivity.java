@@ -75,4 +75,36 @@ public class UebungenActivity extends Activity {
             }
         });
 	}
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        dbHelper = new DBHelper(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
+        lvUebungen = (ListView)findViewById(R.id.listUebungen);
+
+        String query = "SELECT u_id, beschreibung FROM uebungen;";
+        Cursor cursor = db.rawQuery(query, null);
+
+        final ArrayList<Integer> arrID = new ArrayList<Integer>();
+        final ArrayList<String> arrBeschreibung = new ArrayList<String>();
+        ArrayAdapter<String> adapter;
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast())
+        {
+            arrID.add(cursor.getInt(0));
+            arrBeschreibung.add(cursor.getString(1));
+            cursor.moveToNext();
+        }
+
+        adapter=new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                arrBeschreibung);
+        lvUebungen.setAdapter(adapter);
+
+        cursor.close();
+        db.close();
+    }
 }
