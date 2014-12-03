@@ -22,8 +22,13 @@ import org.achartengine.model.SeriesSelection;
 import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 
+
+
 public class UebersichtActivity extends Activity {
 
+    public static boolean isBetween(double x, double lower, double upper) {
+        return lower <= x && x <= upper;
+    }
 
     private static int[] COLORS = new int[] { Color.BLUE, Color.RED,};
 
@@ -56,7 +61,7 @@ public class UebersichtActivity extends Activity {
         mRenderer.setLabelsTextSize(20);
         mRenderer.setLegendTextSize(20);
         mRenderer.setPanEnabled(false);
-       // mRenderer.setMargins(new int[] { 20, 30, 15, 0 });
+        // mRenderer.setMargins(new int[] { 20, 30, 15, 0 });
         mRenderer.setLegendHeight(-20);
         mRenderer.setZoomButtonsVisible(false);
         mRenderer.setStartAngle(90);
@@ -72,7 +77,7 @@ public class UebersichtActivity extends Activity {
             mChartView.repaint();
         }
 
-        String query = "SELECT gewicht, groesse, age from profil";
+        String query = "SELECT gewicht, groesse, age  from profil";
 
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.getCount() != 0) {
@@ -84,6 +89,36 @@ public class UebersichtActivity extends Activity {
 
             TextView txtBmi = (TextView) findViewById(R.id.uBmiZahl);
             txtBmi.setText(bmi + "");
+
+            int alter = cursor.getInt(2);
+            int minBMI = 0;
+            int maxBMI = 0;
+
+            if (isBetween(alter, 19, 24)) {
+                minBMI = 19;
+                maxBMI = 24;
+            } else if (isBetween(alter, 25, 34)) {
+                minBMI = 20;
+                maxBMI = 25;
+            } else if (isBetween(alter, 35, 44)) {
+                minBMI = 21;
+                maxBMI = 26;
+            }else if (isBetween(alter, 45, 54)) {
+                minBMI = 22;
+                maxBMI = 27;
+            }else if (isBetween(alter, 55, 64)) {
+                minBMI = 23;
+                maxBMI = 28;
+            }else if (alter > 64) {
+                minBMI = 24;
+                maxBMI = 29;
+            }
+
+            if (isBetween(bmi, minBMI, maxBMI)) {
+                txtBmi.setTextColor(Color.GREEN);
+            } else {
+                txtBmi.setTextColor(Color.RED);
+            }
         }
     }
 
