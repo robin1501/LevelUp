@@ -41,16 +41,11 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:gravity="center_horizontal">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/neueUebung"
@@ -64,9 +59,6 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_gravity="bottom" />
 
 
