@@ -68,7 +68,7 @@ public class Grafik extends Activity {
         // Create XYSeriesRenderer to customize XSeries
 
         XYSeriesRenderer Xrenderer=new XYSeriesRenderer();
-        Xrenderer.setColor(Color.GREEN);
+        Xrenderer.setColor(Color.BLUE);
         Xrenderer.setPointStyle(PointStyle.POINT);
         Xrenderer.setDisplayChartValues(true);
         Xrenderer.setLineWidth(4);
@@ -85,6 +85,9 @@ public class Grafik extends Activity {
         mRenderer.setXLabels(0);
         mRenderer.setPanEnabled(false);
 
+        mRenderer.setApplyBackgroundColor(true);
+        mRenderer.setBackgroundColor(Color.TRANSPARENT);
+        mRenderer.setMarginsColor(Color.TRANSPARENT);
         mRenderer.setShowGrid(true);
 
         mRenderer.setClickEnabled(true);
