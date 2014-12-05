@@ -48,7 +48,7 @@
         <activity android:name="WorkoutActivity"
                   android:screenOrientation="portrait"></activity>
         <activity android:name="Grafik"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="landscape"></activity>
 
 
     </application>
