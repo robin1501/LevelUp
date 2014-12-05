@@ -40,6 +40,7 @@ public class UebungenDetail extends Activity {
     Integer beine;
     String info;
 
+    TextView tvUebung;
     CheckBox cbBauch;
     CheckBox cbBizeps;
     CheckBox cbTrizeps;
@@ -71,7 +72,7 @@ public class UebungenDetail extends Activity {
         Intent uebungDetail = getIntent();
         final boolean neueUebung = uebungDetail.getBooleanExtra("neu", false);
 
-        final TextView tvUebung = (TextView) findViewById(R.id.tvUebung);
+        tvUebung = (TextView) findViewById(R.id.tvUebung);
         imgBild = (ImageView) findViewById(R.id.imgUebung);
         imgBild.setImageResource(R.drawable.noimage);
         cbBauch = (CheckBox)findViewById(R.id.cbBauch);
@@ -83,16 +84,15 @@ public class UebungenDetail extends Activity {
         cbBeine = (CheckBox)findViewById(R.id.cbBeine);
         txtInfo = (EditText) findViewById(R.id.txtInfo);
 
-        if(neueUebung) {
+        beschreibung = uebungDetail.getStringExtra("beschreibung");
+        tvUebung.setText(beschreibung);
 
-        }
-        else
+        dbHelper = new DBHelper(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
+
+        if(!neueUebung)
         {
             id = uebungDetail.getIntExtra("id", 0);
-            beschreibung = uebungDetail.getStringExtra("beschreibung");
-
-            dbHelper = new DBHelper(getApplicationContext());
-            db = dbHelper.getWritableDatabase();
 
             String query = "SELECT bild, bauch, bizeps, trizeps, brust, schulter, ruecken, beine, info FROM uebungen WHERE u_id = " + id;
             Cursor cursor = db.rawQuery(query, null);
@@ -108,7 +108,6 @@ public class UebungenDetail extends Activity {
             beine = cursor.getInt(7);
             info = cursor.getString(8);
 
-            tvUebung.setText(beschreibung);
             if (bild != null)
             {
                 ByteArrayInputStream in = new ByteArrayInputStream(bild);
@@ -260,16 +259,21 @@ public class UebungenDetail extends Activity {
 
                 if(neueUebung)
                 {
-                    beschreibung = tvUebung.getText().toString();
-                    values.put("beschreibung", beschreibung);
+                    values.put("beschreibung", tvUebung.getText().toString());
                     db.insert("uebungen", null, values);
                     Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();
+                    UebungenDetail.this.finish();
                 }
                 else
                 {
                     int ret = db.update("uebungen", values, "u_id = " + id, null);
                     if(ret != 0) {
                         Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();
+                        UebungenDetail.this.finish();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Fehler! Änderungen nicht gespeichert", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
