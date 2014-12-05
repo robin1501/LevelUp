@@ -54,6 +54,20 @@ public class UebungenDetail extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uebungdetail);
 
+        Button grafik = (Button) findViewById(R.id.grafik);
+        grafik.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // start activity with intent
+                Intent intent = new Intent(UebungenDetail.this,
+                        Grafik.class);
+              //  intent.putExtra(SecondActivity.EXTRA_COUNT, mCounter);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+
         Intent uebungDetail = getIntent();
         final boolean neueUebung = uebungDetail.getBooleanExtra("neu", false);
 
