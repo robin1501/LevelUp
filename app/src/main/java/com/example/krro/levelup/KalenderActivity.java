@@ -4,6 +4,7 @@ import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Calendars;
 import android.provider.CalendarContract.Events;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -31,8 +33,43 @@ public class KalenderActivity extends Activity {
         setContentView(R.layout.kalender);
     }
 
+
     public void onClick(View view) {
 
+     //Kalender Id selektieren
+        ContentResolver resolver = getContentResolver();
+         String[] projection = { Calendars._ID, Calendars.CALENDAR_DISPLAY_NAME };
+         Cursor cursor = resolver.query(Calendars.CONTENT_URI, projection, null, null, null);
+
+        long calenderId;
+        if (cursor.moveToNext()) {
+                 calenderId = cursor.getLong(0);
+                 String name = cursor.getString(1);
+                 Log.i("My", "Kalender ID " + calenderId + ": " + name);
+             } else {
+                 throw new RuntimeException("Kein Kalender verfuegbar");
+             }
+
+     //Termin hizufügen
+        long now = System.currentTimeMillis();
+        long startMillis = now + 60 * 60 * 1000;
+        long endMillis = startMillis + 60 * 60 * 1000;
+
+         ContentValues values = new ContentValues();
+        values.put(Events.CALENDAR_ID, calenderId);
+         values.put(Events.DTSTART, startMillis);
+         values.put(Events.DTEND, endMillis);
+         values.put(Events.EVENT_TIMEZONE, "CET");
+         values.put(Events.TITLE, "App entwickeln");
+         values.put(Events.DESCRIPTION, "Mit Android 4.0 APIs");
+         Uri eventUri = resolver.insert(Events.CONTENT_URI, values);
+         long id = Long.parseLong(eventUri.getLastPathSegment());
+         Log.i("My", "Neues Event mit ID " + id + " hinzugefuegt");
+
+
+
+    }
+     /*
         Intent intent = new Intent(Intent.ACTION_INSERT);
         intent.setType("vnd.android.cursor.item/event");
         intent.putExtra(Events.TITLE, "Brust / Bizeps Training");
@@ -74,7 +111,7 @@ public class KalenderActivity extends Activity {
             Toast.makeText(this, "Calendar " + displayName, Toast.LENGTH_SHORT)
                     .show();
         }
-    }
+    } */
 }
 
 
