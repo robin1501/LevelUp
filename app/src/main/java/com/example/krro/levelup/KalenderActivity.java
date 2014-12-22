@@ -1,9 +1,11 @@
 package com.example.krro.levelup;
 
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -56,7 +58,7 @@ public class KalenderActivity extends Activity {
         long endMillis = startMillis + 60 * 60 * 1000;
 
          ContentValues values = new ContentValues();
-        values.put(Events.CALENDAR_ID, calenderId);
+         values.put(Events.CALENDAR_ID, calenderId);
          values.put(Events.DTSTART, startMillis);
          values.put(Events.DTEND, endMillis);
          values.put(Events.EVENT_TIMEZONE, "CET");
@@ -66,8 +68,25 @@ public class KalenderActivity extends Activity {
          long id = Long.parseLong(eventUri.getLastPathSegment());
          Log.i("My", "Neues Event mit ID " + id + " hinzugefuegt");
 
+        //Termin ausgeben
+        Uri.Builder builder = CalendarContract.Instances.CONTENT_URI.buildUpon();
+         ContentUris.appendId(builder, now);
+         ContentUris.appendId(builder, now + 200l * 24 * 60 * 60 * 1000);
 
-
+         projection = new String[] { CalendarContract.Instances.EVENT_ID, CalendarContract.Instances.BEGIN, CalendarContract.Instances.TITLE };
+         cursor = resolver.query(builder.build(), projection, null, null, null);
+         while (cursor.moveToNext()) {
+                long eventId = cursor.getLong(0);
+                Date date = new Date(cursor.getLong(1));
+                String title = cursor.getString(2);
+                Log.i("My", "Event ID " + eventId + ": " + title + " (" + date + ")");
+             }
+/*
+        // Teil 4: Angelegten Termin wieder loeschen
+         // ----------------------------------
+         int deleteCount = getContentResolver().delete(eventUri, null, null);
+         Log.i("My", "Termine geloescht: " + deleteCount);
+*/
     }
      /*
         Intent intent = new Intent(Intent.ACTION_INSERT);
