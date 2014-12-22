@@ -14,6 +14,7 @@
     <string name="noWorkout">Keine Workoutdaten</string>
     <string name="bearbeiten">Bearbeiten</string>
     <string name="neueUebung">Neue Übung hinzufügen</string>
+    <string name="neuesWorkout">Neues Workout hinzufügen</string>
     <string name="name">Name</string>
     <string name="workout_erstellen">Workout erstellen</string>
     <string name="alter">Alter</string>

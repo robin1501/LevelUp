@@ -1,35 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/iczedwhn"
-    >
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/iczedwhn">
+
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/workout"
-        android:id="@+id/wHead"
-        android:layout_alignParentTop="true"
-        android:textAlignment="center"
         android:textSize="40dp"
         android:textColor="#FFFFFF"
-        android:gravity="center_horizontal" />
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical|center_horizontal" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="377dp"
-        android:id="@+id/listWorkouts"
-        android:choiceMode="singleChoice"
-        android:layout_below="@+id/wHead"
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="377dp"
+            android:id="@+id/listWorkout"
+            android:choiceMode="singleChoice"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="true">
 
-       />
+        <Button
+            android:id="@+id/neuesWorkout"
+            android:text="@string/neuesWorkout"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:background="@drawable/buttonshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_gravity="bottom" />
 
 
+    </LinearLayout>
 
 
-
-</RelativeLayout>
+</LinearLayout>

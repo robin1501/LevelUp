@@ -11,7 +11,7 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "fitness.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
@@ -40,8 +40,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS workouthead ("
             + "wh_id integer primary key, "
-            + "beschreibung text not null, "
-            + "datum date not null);";
+            + "beschreibung text not null);";
 
     private static final String TABLE_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS workoutpos ("
             + "wh_id integer, "
@@ -51,6 +50,21 @@ public class DBHelper extends SQLiteOpenHelper {
             + "wiederholungen integer not null, "
             + "saetze integer not null, "
             + "PRIMARY KEY(wh_id, wp_id));";
+
+    private static final String TABLE_TODO_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS todo_workouthead ("
+            + "th_id integer primary key, "
+            + "wh_id integer"
+            + "datum date not null"
+            + "erledigt integer default 0);";
+
+    private static final String TABLE_TODO_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS workoutpos ("
+            + "th_id integer primary key, "
+            + "wh_id integer, "
+            + "wp_id integer, "
+            + "u_id integer not null, "
+            + "gewicht integer not null, "
+            + "wiederholungen integer not null, "
+            + "saetze integer not null;";
 
     private static final String TABLE_PROFIL = "CREATE TABLE IF NOT EXISTS profil ("
             + "p_id integer primary key, "
