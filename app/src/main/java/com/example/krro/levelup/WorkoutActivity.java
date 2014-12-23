@@ -50,7 +50,7 @@ public class WorkoutActivity extends Activity {
             public void onClick(View v) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(WorkoutActivity.this);
 
-                alert.setTitle("Neues WOrkout eingeben");
+                alert.setTitle("Neues Workout eingeben");
 
                 final EditText input = new EditText(WorkoutActivity.this);
                 alert.setView(input);

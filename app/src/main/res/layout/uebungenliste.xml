@@ -22,8 +22,8 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivUebung"
         android:layout_toEndOf="@+id/ivUebung"
-        android:layout_toLeftOf="@+id/checkBox"
-        android:layout_toStartOf="@+id/checkBox"
+        android:layout_toLeftOf="@+id/cbAuswahl"
+        android:layout_toStartOf="@+id/cbAuswahl"
         android:textSize="40dp" />
 
     <TextView
@@ -37,14 +37,14 @@
         android:maxLines="2"
         android:singleLine="false"
         android:text="Muskelgruppen"
-        android:textSize="14dp"
-        android:layout_toLeftOf="@+id/checkBox"
-        android:layout_toStartOf="@+id/checkBox" />
+        android:textSize="12dp"
+        android:layout_toLeftOf="@+id/cbAuswahl"
+        android:layout_toStartOf="@+id/cbAuswahl" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        android:id="@+id/checkBox"
+        android:id="@+id/cbAuswahl"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@+id/tvMuskelgruppen" />
