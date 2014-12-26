@@ -84,11 +84,9 @@ public class ProfilActivity extends Activity {
                     db.insert("profil", null, args);
                 }
                 else {
-                    int ret = db.update("profil", args, "p_id = 1", null);
-                    if (ret != 0) {
-                        Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();
-                    }
+                    db.update("profil", args, "p_id = 1", null);
                 }
+                Toast.makeText(getApplicationContext(), R.string.saveChanges, Toast.LENGTH_SHORT).show();
             }
         });
 	}

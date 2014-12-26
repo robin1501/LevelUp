@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/ivUebung"
+        android:maxWidth="80dp"
+        android:maxHeight="80dp"
+        android:minHeight="80dp"
+        android:minWidth="80dp"
+        android:src="@drawable/noimage"
+        android:adjustViewBounds="false" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Beschreibung"
+        android:id="@+id/tvBeschreibung"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/ivUebung"
+        android:layout_toEndOf="@+id/ivUebung"
+        android:layout_toLeftOf="@+id/cbAuswahl"
+        android:layout_toStartOf="@+id/cbAuswahl"
+        android:textSize="40dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tvMuskelgruppen"
+        android:layout_toEndOf="@+id/ivUebung"
+        android:layout_below="@+id/tvBeschreibung"
+        android:layout_toRightOf="@+id/ivUebung"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:text="Muskelgruppen"
+        android:textSize="12dp"
+        android:layout_toLeftOf="@+id/cbAuswahl"
+        android:layout_toStartOf="@+id/cbAuswahl" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:id="@+id/cbAuswahl"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/tvMuskelgruppen" />
+
+</RelativeLayout>
