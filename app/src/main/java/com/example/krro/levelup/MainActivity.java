@@ -12,7 +12,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	}
-	
+	//Buttons der Main View um zu den anderen Activitys zu gelangen
 	public void onButtonClick(View view) {
 		if(view.getId() == R.id.btnUebersicht) {
 			startActivity(new Intent(this, UebersichtActivity.class));
