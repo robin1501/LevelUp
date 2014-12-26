@@ -89,7 +89,7 @@ public class WorkoutActivity extends Activity {
         db = dbHelper.getWritableDatabase();
         lvWorkout = (ListView)findViewById(R.id.listWorkout);
 
-        String query = "SELECT wh_id, beschreibung FROM workouthead;";
+        String query = "SELECT w_id, beschreibung FROM workouthead;";
         Cursor cursor = db.rawQuery(query, null);
 
         arrID = new ArrayList<Integer>();

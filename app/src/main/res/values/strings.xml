@@ -43,6 +43,8 @@
         <item>männlich</item>
         <item>weiblich</item>
     </string-array>
+    <string name="neueBez">Neue Bezeichnung eingeben:</string>
+    <string name="saveChanges">Änderungen gespeichert</string>
 
 
 </resources>

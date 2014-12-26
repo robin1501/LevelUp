@@ -1,7 +1,9 @@
 package com.example.krro.levelup;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -86,6 +88,32 @@ public class UebungenDetail extends Activity {
 
         beschreibung = uebungDetail.getStringExtra("beschreibung");
         tvUebung.setText(beschreibung);
+        tvUebung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(UebungenDetail.this);
+
+                alert.setTitle(R.string.neueBez);
+
+                final EditText input = new EditText(UebungenDetail.this);
+                alert.setView(input);
+
+                alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        beschreibung = input.getText().toString();
+                        tvUebung.setText(beschreibung);
+                    }
+                });
+
+                alert.setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                    }
+                });
+
+                alert.show();
+            }
+        });
 
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
@@ -188,6 +216,8 @@ public class UebungenDetail extends Activity {
             public void onClick(View view) {
 
                 ContentValues values = new ContentValues();
+
+                values.put("beschreibung", beschreibung);
                 if(bild != null) {
                     values.put("bild", bild);
                 }
@@ -259,23 +289,15 @@ public class UebungenDetail extends Activity {
 
                 if(neueUebung)
                 {
-                    values.put("beschreibung", tvUebung.getText().toString());
                     db.insert("uebungen", null, values);
-                    Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();
                     UebungenDetail.this.finish();
                 }
                 else
                 {
                     int ret = db.update("uebungen", values, "u_id = " + id, null);
-                    if(ret != 0) {
-                        Toast.makeText(getApplicationContext(), "Änderungen gespeichert", Toast.LENGTH_SHORT).show();
-                        UebungenDetail.this.finish();
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(), "Fehler! Änderungen nicht gespeichert", Toast.LENGTH_SHORT).show();
-                    }
+                    UebungenDetail.this.finish();
                 }
+                Toast.makeText(getApplicationContext(), R.string.saveChanges, Toast.LENGTH_SHORT).show();
             }
         });
 
