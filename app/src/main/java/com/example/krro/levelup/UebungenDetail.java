@@ -294,7 +294,7 @@ public class UebungenDetail extends Activity {
                 }
                 else
                 {
-                    int ret = db.update("uebungen", values, "u_id = " + id, null);
+                    db.update("uebungen", values, "u_id = " + id, null);
                     UebungenDetail.this.finish();
                 }
                 Toast.makeText(getApplicationContext(), R.string.saveChanges, Toast.LENGTH_SHORT).show();

@@ -45,13 +45,17 @@ public class MyCursorAdapter extends CursorAdapter{
         TextView beschreibung = (TextView)view.findViewById(R.id.tvBeschreibung);
         beschreibung.setText(cursor.getString(1));
 
+        ImageView imgBild = (ImageView)view.findViewById(R.id.ivUebung);
         byte[] bild = cursor.getBlob(2);
         if (bild != null)
         {
             ByteArrayInputStream in = new ByteArrayInputStream(bild);
             Bitmap bmpBild = BitmapFactory.decodeStream(in);
-            ImageView imgBild = (ImageView)view.findViewById(R.id.ivUebung);
             imgBild.setImageBitmap(bmpBild);
+        }
+        else
+        {
+            imgBild.setImageResource(R.drawable.noimage);
         }
 
         TextView muskelgruppen = (TextView)view.findViewById(R.id.tvMuskelgruppen);
