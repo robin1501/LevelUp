@@ -29,7 +29,7 @@ public class UebersichtActivity extends Activity {
     public static boolean isBetween(double x, double lower, double upper) {
         return lower <= x && x <= upper;
     }
-
+    //erstellt Chart
     private static int[] COLORS = new int[] { Color.BLUE, Color.RED,};
 
     private static double[] VALUES = new double[] { 70, 30,};

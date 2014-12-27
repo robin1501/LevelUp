@@ -212,14 +212,15 @@
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-
+        android:layout_width="40dp"
+        android:layout_height="45dp"
         android:textColor="#FFFFFF"
         android:id="@+id/grafik"
-        android:background="@drawable/grafik"
+        android:background="@drawable/graf"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"/>
 </RelativeLayout>
 </ScrollView>

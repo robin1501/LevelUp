@@ -88,7 +88,6 @@ public class WorkoutDetail extends Activity {
                     Cursor c = db.rawQuery("SELECT MAX(w_id) FROM workouthead", null);
                     c.moveToFirst();
                     workoutIndex = c.getInt(0);
-                    Toast.makeText(getApplicationContext(), R.string.saveChanges, Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -114,7 +113,7 @@ public class WorkoutDetail extends Activity {
                     }
                     else
                     {
-
+                        db.delete("workoutpos", "w_id = " + workoutIndex + " AND u_id = " + arrID.get(i), null);
                     }
                 }
                 WorkoutDetail.this.finish();
