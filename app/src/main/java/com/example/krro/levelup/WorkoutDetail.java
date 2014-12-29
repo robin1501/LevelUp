@@ -105,9 +105,6 @@ public class WorkoutDetail extends Activity {
                         {
                             posVal.put("w_id", workoutIndex);
                             posVal.put("u_id", arrID.get(i));
-                            posVal.put("gewicht", 0);
-                            posVal.put("wiederholungen", 0);
-                            posVal.put("saetze", 0);
                             db.insert("workoutpos", null, posVal);
                         }
                     }

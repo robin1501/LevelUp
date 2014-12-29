@@ -9,13 +9,16 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "fitness.db";
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 15;
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
             + "u_id integer primary key, "
             + "beschreibung text not null, "
             + "bild blob, "
+            + "gewicht integer default 0, "
+            + "wiederholungen integer default 0, "
+            + "saetze integer default 0, "
             + "bauch integer default 0 CHECK (bauch IN (0,1)), "
             + "bizeps integer default 0 CHECK (bizeps IN (0,1)), "
             + "trizeps integer default 0 CHECK (trizeps IN (0,1)), "
@@ -51,7 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + "datum text not null, "
             + "uhrzeit text, "
             + "kalendereintrag integer, "
-            + "abgeschlossen integer default 0);";
+            + "abgeschlossen integer default 0 CHECK (abgeschlossen IN (0,1)));";
 
     private static final String TABLE_TODO_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS todo_workoutpos ("
             + "t_id integer, "

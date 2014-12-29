@@ -104,7 +104,7 @@ public class TodoWorkoutDetail extends Activity {
                         kalenderVal.put(CalendarContract.Events.EVENT_TIMEZONE, "CET");
                         kalenderVal.put(CalendarContract.Events.TITLE, spWorkout.getSelectedItem().toString());
 
-                        Uri eventUri = resolver.insert(CalendarContract.Events.CONTENT_URI, values);
+                        Uri eventUri = resolver.insert(CalendarContract.Events.CONTENT_URI, kalenderVal);
                         long id = Long.parseLong(eventUri.getLastPathSegment());
                         values.put("kalendereintrag", id);
                     } else {

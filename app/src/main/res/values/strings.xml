@@ -51,6 +51,13 @@
     <string name="saveChanges">Änderungen gespeichert</string>
     <string name="workoutAuswaehlen">Workout auswählen:</string>
     <string name="kalenderEintrag">Kalendereintrag erstellen</string>
+    <string name="letztesGewicht">Letztes Gewicht:</string>
+    <string name="Gewicht">Gewicht:</string>
+    <string name="letzteWiederholungen">Letzte Wiederholungen:</string>
+    <string name="Wiederholungen">Wiederholungen:</string>
+    <string name="letzteSaetze">Letzte Sätze:</string>
+    <string name="Saetze">Sätze:</string>
+    <string name="uebungAbschluss">Übung abgeschlossen</string>
 
 
 </resources>
