@@ -48,7 +48,8 @@ public class TerminAdapter extends CursorAdapter {
         TextView workout = (TextView)view.findViewById(R.id.tvWorkout);
         workout.setText(cursor.getString(3));
 
-        final int id = cursor.getInt(0);
+        final int terminID = cursor.getInt(0);
+        final int workoutID = cursor.getInt(1);
         final long kalendereintrag = cursor.getLong(4);
         final Context todoContext = context;
 
@@ -66,7 +67,7 @@ public class TerminAdapter extends CursorAdapter {
                         dbHelper = new DBHelper(todoContext);
                         db = dbHelper.getWritableDatabase();
 
-                        db.delete("todo_workouthead", "t_id = " + id, null);
+                        db.delete("todo_workouthead", "t_id = " + terminID, null);
 
                         db.close();
 
@@ -93,6 +94,11 @@ public class TerminAdapter extends CursorAdapter {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent uebungDetail = new Intent(todoContext, StartWorkoutActivty.class);
+                uebungDetail.putExtra("terminID", terminID);
+                uebungDetail.putExtra("workoutID",workoutID);
+                todoContext.startActivity(uebungDetail);
 
             }
         });
