@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
         android:text="Beschreibung"
         android:id="@+id/tvBeschreibung"
         android:layout_alignParentTop="true"
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="30dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFFFFF"
         android:id="@+id/tvMuskelgruppen"
         android:layout_toEndOf="@+id/ivUebung"
         android:layout_below="@+id/tvBeschreibung"

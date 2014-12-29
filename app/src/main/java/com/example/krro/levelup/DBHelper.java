@@ -5,13 +5,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/**
- * Created by krro on 18.11.2014.
- */
+
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "fitness.db";
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 13;
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
@@ -44,17 +42,24 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS workoutpos ("
             + "w_id integer, "
-            + "u_id integer not null, "
+            + "u_id integer, "
+            + "PRIMARY KEY(w_id, u_id));";
+
+    private static final String TABLE_TODO_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS todo_workouthead ("
+            + "t_id integer primary key, "
+            + "w_id integer, "
+            + "datum text not null, "
+            + "uhrzeit text, "
+            + "kalendereintrag integer, "
+            + "abgeschlossen integer default 0);";
+
+    private static final String TABLE_TODO_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS todo_workoutpos ("
+            + "t_id integer, "
+            + "u_id integer, "
             + "gewicht integer not null, "
             + "wiederholungen integer not null, "
             + "saetze integer not null, "
-            + "PRIMARY KEY(w_id, u_id));";
-
-    private static final String TABLE_TODO_WORKOUT = "CREATE TABLE IF NOT EXISTS todo_workout ("
-            + "th_id integer primary key, "
-            + "w_id integer"
-            + "datum date not null"
-            + "erledigt integer default 0);";
+            + "PRIMARY KEY(t_id, u_id));";
 
     private static final String TABLE_PROFIL = "CREATE TABLE IF NOT EXISTS profil ("
             + "p_id integer primary key, "
@@ -75,20 +80,26 @@ public class DBHelper extends SQLiteOpenHelper {
         database.execSQL(INSERT_UEBUNG);
         database.execSQL(TABLE_WORKOUT_HEAD);
         database.execSQL(TABLE_WORKOUT_POS);
+        database.execSQL(TABLE_TODO_WORKOUT_HEAD);
+        database.execSQL(TABLE_TODO_WORKOUT_POS);
         database.execSQL(TABLE_PROFIL);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE profil");
-        db.execSQL("DROP TABLE uebungen");
-        db.execSQL("DROP TABLE workouthead");
-        db.execSQL("DROP TABLE workoutpos");
+        db.execSQL("DROP TABLE IF EXISTS profil");
+        db.execSQL("DROP TABLE IF EXISTS uebungen");
+        db.execSQL("DROP TABLE IF EXISTS workouthead");
+        db.execSQL("DROP TABLE IF EXISTS workoutpos");
+        db.execSQL("DROP TABLE IF EXISTS todo_workouthead");
+        db.execSQL("DROP TABLE IF EXISTS todo_workoutpos");
 
         db.execSQL(TABLE_UEBUNG);
         db.execSQL(INSERT_UEBUNG);
         db.execSQL(TABLE_WORKOUT_HEAD);
         db.execSQL(TABLE_WORKOUT_POS);
+        db.execSQL(TABLE_TODO_WORKOUT_HEAD);
+        db.execSQL(TABLE_TODO_WORKOUT_POS);
         db.execSQL(TABLE_PROFIL);
     }
 

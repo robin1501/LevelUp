@@ -23,7 +23,7 @@ public class WorkoutDetail extends Activity {
     private DBHelper dbHelper;
     private SQLiteDatabase db;
     private Cursor cursor;
-    MyCursorAdapter adapter;
+    WorkoutAdapter adapter;
 
     ListView lvUebungen;
     ArrayList<Integer> arrID;
@@ -146,14 +146,13 @@ public class WorkoutDetail extends Activity {
         db.close();
     }
 
-    public void setListView()
+    private void setListView()
     {
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
         lvUebungen = (ListView)findViewById(R.id.selectUebungen);
 
-        Log.v("index", id +"");
-        String query = "SELECT u_id as _id, beschreibung, bild, bauch, "
+        String query = "SELECT u_id AS _id, beschreibung, bild, bauch, "
                 + "bizeps, trizeps, brust, schulter, ruecken, beine, "
                 + "CASE WHEN EXISTS (SELECT w.u_id FROM workoutpos w WHERE w.w_id = " + id + " AND u.u_id = w.u_id) THEN 1 ELSE 0 END "
                 + "FROM uebungen u;";
@@ -169,7 +168,7 @@ public class WorkoutDetail extends Activity {
                 cursor.moveToNext();
             }
 
-            adapter = new MyCursorAdapter(this, cursor);
+            adapter = new WorkoutAdapter(this, cursor);
             lvUebungen.setAdapter(adapter);
         }
     }

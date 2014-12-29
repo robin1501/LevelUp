@@ -18,13 +18,13 @@ import android.widget.TextView;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 
-public class MyCursorAdapter extends CursorAdapter{
+public class WorkoutAdapter extends CursorAdapter{
 
     private LayoutInflater cursorInflater;
 
     private ArrayList<Boolean> itemChecked = new ArrayList<Boolean>();
 
-    public MyCursorAdapter(Context context, Cursor c) {
+    public WorkoutAdapter(Context context, Cursor c) {
         super(context, c);
         cursorInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);

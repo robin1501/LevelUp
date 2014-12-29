@@ -49,6 +49,10 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="WorkoutDetail"
             android:screenOrientation="portrait"></activity>
+        <activity android:name="TodoWorkoutActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="TodoWorkoutDetail"
+            android:screenOrientation="portrait"></activity>
         <activity android:name="Grafik"
             android:screenOrientation="landscape"></activity>
 

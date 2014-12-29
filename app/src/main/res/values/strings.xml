@@ -5,7 +5,9 @@
     <string name="action_settings">Settings</string>
     <string name="uebersicht">Übersicht</string>
     <string name="workout">Workout</string>
-    <string name="workout_ausführen">Workout ausführen</string>
+    <string name="workout_termine">Workout Termine</string>
+    <string name="offene_termine">Offene Termine</string>
+    <string name="termin">Neuer Termin</string>
     <string name="uebungen">Übungen</string>
     <string name="profil">Mein Profil</string>
     <string name="kalender">Kalender</string>
@@ -15,10 +17,16 @@
     <string name="bearbeiten">Bearbeiten</string>
     <string name="neueUebung">Neue Übung hinzufügen</string>
     <string name="neuesWorkout">Neues Workout hinzufügen</string>
-    <string name="name">Name</string>
+    <string name="neuerTermin">Neuen Termin hinzufügen</string>
     <string name="workout_erstellen">Workout erstellen</string>
+    <string name="termin_erstellen">Termin erstellen</string>
+    <string name="name">Name</string>
     <string name="alter">Alter</string>
     <string name="geschlecht">Geschlecht</string>
+    <string-array name="arrGeschlecht">
+        <item>männlich</item>
+        <item>weiblich</item>
+    </string-array>
     <string name="groeße">Größe</string>
     <string name="gewicht">Gewicht</string>
     <string name="wunschgewicht">Wunschgewicht</string>
@@ -39,12 +47,10 @@
     <string name="ruecken">Rücken</string>
     <string name="zahl">Zahl</string>
     <string name="speichern">Speichern</string>
-    <string-array name="arrGeschlecht">
-        <item>männlich</item>
-        <item>weiblich</item>
-    </string-array>
     <string name="neueBez">Neue Bezeichnung eingeben:</string>
     <string name="saveChanges">Änderungen gespeichert</string>
+    <string name="workoutAuswaehlen">Workout auswählen:</string>
+    <string name="kalenderEintrag">Kalendereintrag erstellen</string>
 
 
 </resources>

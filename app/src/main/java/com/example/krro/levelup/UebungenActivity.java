@@ -85,7 +85,7 @@ public class UebungenActivity extends Activity {
         setListView();
     }
 
-    public void setListView()
+    private void setListView()
     {
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();

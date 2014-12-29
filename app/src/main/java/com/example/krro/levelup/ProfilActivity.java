@@ -90,4 +90,11 @@ public class ProfilActivity extends Activity {
             }
         });
 	}
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        cursor.close();
+        db.close();
+    }
 }
