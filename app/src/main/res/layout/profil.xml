@@ -1,264 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:id="@+id/sap"
-    android:background="@drawable/hintergrund">
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/profil"
-        android:textColor="#FFFFFF"
-        android:id="@+id/textView2"
-        android:textSize="40dp"
-        android:layout_gravity="bottom|top"
-        android:gravity="center_horizontal" />
-
-
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/name"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewName"
-            android:textSize="25dp" />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextName"
-            android:layout_weight="1" />
-
-
-        ></LinearLayout>
-
-    <View
-        android:id="@+id/devider1"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/linearLayout"
-        android:background="#FFFFFF"
-        />
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:background="@drawable/hintergrund"
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/alter"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewAlter"
-            android:textSize="25dp" />
-
-        <EditText
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editTextAlter"
-            android:inputType="number"
-            android:layout_weight="1" />
-
-        ></LinearLayout>
-
-    <View
-        android:id="@+id/devider4"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/linearLayout"
-        android:background="#FFFFFF"
-        />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/geschlecht"
+            android:textSize="40dp"
+            android:text="@string/profil"
             android:textColor="#FFFFFF"
-            android:id="@+id/textViewGeschlecht"
-            android:textSize="25dp" />
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
 
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/spGeschlecht"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/textView2"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout9">
 
-    </LinearLayout>
+            ></LinearLayout>
 
-    <View
-        android:id="@+id/devider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/linearLayout"
-        android:background="#FFFFFF"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout9"
+            android:weightSum="2"
+            android:id="@+id/linearLayout1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/name"
+                android:textColor="#FFFFFF"
+                android:id="@+id/textViewName"
+                android:textSize="25dp" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/groeße"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewGröße"
-            android:textSize="25dp" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTextName"
+                android:layout_weight="1" />
+            ></LinearLayout>
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextGröße"
-            android:gravity="right"
-            android:inputType="number"
-            android:layout_weight="0.5" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout1"
+            android:weightSum="2"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/alter"
+                android:id="@+id/textViewAlter"
+                android:textSize="25dp" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="cm"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewCM"
-            android:textSize="25dp" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTextAlter"
+                android:layout_weight="1" />
+            ></LinearLayout>
 
-        ></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout2"
+            android:weightSum="2"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/geschlecht"
+                android:id="@+id/textViewGeschlecht"
+                android:textSize="25dp" />
 
-    <View
-        android:id="@+id/devider6"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/linearLayout"
-        android:background="#FFFFFF"
-        />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spGeschlecht"
+                android:layout_weight="1" />
+            ></LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/gewicht"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewGewicht"
-            android:textSize="25dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout3"
+            android:weightSum="2"
+            android:id="@+id/linearLayout4">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/groeße"
+                android:id="@+id/textViewGröße"
+                android:textSize="25dp" />
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextGewicht"
-            android:gravity="right"
-            android:inputType="number"
-            android:layout_weight="0.5" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTextGröße"
+                android:layout_weight="0.7" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="cm"
+                android:id="@+id/textViewCm"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="kg"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewKG"
-            android:textSize="25dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout4"
+            android:weightSum="2"
+            android:id="@+id/linearLayout5">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/gewicht"
+                android:id="@+id/textViewGewicht"
+                android:textSize="25dp" />
 
-        ></LinearLayout>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTextGewicht"
+                android:layout_weight="0.7" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="kg"
+                android:id="@+id/textViewKG"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
+            ></LinearLayout>
 
-    <View
-        android:id="@+id/devider3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/linearLayout"
-        android:background="#FFFFFF"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout5"
+            android:weightSum="2"
+            android:id="@+id/linearLayout6">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/wunschgewicht"
+                android:id="@+id/textViewWunschgewicht"
+                android:textSize="25dp" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/wunschgewicht"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewWunschgewicht"
-            android:textSize="25dp" />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextWunschgewicht"
-            android:gravity="right"
-            android:inputType="number"
-            android:layout_weight="0.5" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="kg"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textViewKG2"
-            android:textSize="25dp" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTextWunschgewicht"
+                android:layout_weight="0.7" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="kg"
+                android:id="@+id/textViewKG2"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
+            ></LinearLayout>
 
 
-        ></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/linearLayout6"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout7">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        >
+            ></LinearLayout>
 
         <Button
-            android:id="@+id/angry_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:text="@string/speichern"
             android:textColor="#FFFFFF"
-            android:textSize="30dp"
             android:background="@drawable/buttonshape"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"
+            android:id="@+id/angry_btn"
+            android:textSize="30dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_gravity="bottom" />
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-</LinearLayout>
+
+
+
+    </RelativeLayout>
+</ScrollView>
