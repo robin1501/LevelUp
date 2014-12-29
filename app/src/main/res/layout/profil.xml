@@ -193,14 +193,11 @@
             android:id="@+id/linearLayout7">
 
             ></LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_below="@+id/linearLayout7">
+
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout7"
                 android:text="@string/speichern"
                 android:textColor="#FFFFFF"
                 android:background="@drawable/buttonshape"
@@ -212,7 +209,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />
 
-        </LinearLayout>
+
 
 
     </RelativeLayout>
