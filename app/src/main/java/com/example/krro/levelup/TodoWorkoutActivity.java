@@ -69,7 +69,7 @@ public class TodoWorkoutActivity extends Activity{
         String query = "SELECT t.t_id AS _id, t.w_id, t.datum, w.beschreibung, t.kalendereintrag "
             + "FROM todo_workouthead t INNER JOIN workouthead w ON t.w_id = w.w_id "
             + "WHERE abgeschlossen = 0 "
-            + "ORDER BY t.datum";
+            + "ORDER BY SUBSTR(t.datum, 7, 4), SUBSTR(t.datum, 4, 2), SUBSTR(t.datum, 1, 2)";
         cursor = db.rawQuery(query, null);
 
         if(cursor.getCount() != 0) {

@@ -2,12 +2,14 @@ package com.example.krro.levelup;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,12 +70,14 @@ public class TerminAdapter extends CursorAdapter {
                         db = dbHelper.getWritableDatabase();
 
                         db.delete("todo_workouthead", "t_id = " + terminID, null);
+                        db.delete("todo_workoutpos", "t_id = " + terminID, null);
 
                         db.close();
 
                         if(kalendereintrag != 0)
                         {
-
+                            Uri kalender = Uri.parse("content://com.android.calendar/events");
+                            todoContext.getContentResolver().delete(ContentUris.withAppendedId(kalender,kalendereintrag), null, null);
                         }
 
                         ((TodoWorkoutActivity)todoContext).setListView();
