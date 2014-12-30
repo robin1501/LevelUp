@@ -74,8 +74,18 @@ public class TodoWorkoutDetail extends Activity {
                 values.put("w_id", arrID.get(spWorkout.getSelectedItemPosition()));
                 int jahr = dpDatum.getYear();
                 int monat = dpDatum.getMonth();
+                String strMonat = (monat+1) + "";
+                if(monat < 10)
+                {
+                    strMonat = "0" + (monat+1);
+                }
                 int tag = dpDatum.getDayOfMonth();
-                values.put("datum", tag + "." + monat + "." + jahr);
+                String strTag = tag + "";
+                if(tag < 10)
+                {
+                    strTag = "0" + tag;
+                }
+                values.put("datum", strTag + "." + strMonat + "." + jahr);
                 int stunden = tpZeit.getCurrentHour();
                 int minuten = tpZeit.getCurrentMinute();
                 values.put("uhrzeit", stunden + ":" + minuten);
