@@ -9,7 +9,7 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "fitness.db";
-    private static final int DATABASE_VERSION = 15;
+    private static final int DATABASE_VERSION = 17;
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
@@ -71,7 +71,8 @@ public class DBHelper extends SQLiteOpenHelper {
             + "gewicht integer, "
             + "groesse integer, "
             + "geschlecht text, "
-            + "wunschgewicht integer);";
+            + "wunschgewicht integer, "
+            + "workouts integer);";
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

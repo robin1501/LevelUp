@@ -58,6 +58,8 @@
     <string name="letzteSaetze">Letzte Sätze:</string>
     <string name="Saetze">Sätze:</string>
     <string name="uebungAbschluss">Übung abgeschlossen</string>
+    <string name="workouts">Workouts</string>
+    <string name="proWoche">pro Woche</string>
 
 
 </resources>

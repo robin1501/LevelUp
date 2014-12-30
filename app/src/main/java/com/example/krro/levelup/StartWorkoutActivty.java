@@ -11,11 +11,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -100,7 +98,7 @@ public class StartWorkoutActivty extends Activity {
 
 
                 // Tastatur automatisch schließen
-               InputMethodManager imm = (InputMethodManager)getSystemService(
+                InputMethodManager imm = (InputMethodManager)getSystemService(
                         Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(txtSaetze.getWindowToken(), 0);
                 imm.hideSoftInputFromWindow(txtWiederholungen.getWindowToken(), 0);

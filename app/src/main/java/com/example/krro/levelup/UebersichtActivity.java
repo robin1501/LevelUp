@@ -29,23 +29,16 @@ public class UebersichtActivity extends Activity {
     public static boolean isBetween(double x, double lower, double upper) {
         return lower <= x && x <= upper;
     }
-    //erstellt Chart
-    private static int[] COLORS = new int[] { Color.BLUE, Color.RED,};
-
-    private static double[] VALUES = new double[] { 70, 30,};
-
-    private static String[] NAME_LIST = new String[] { "Erledigt", "Offen", };
-
-    private CategorySeries mSeries = new CategorySeries("");
-
-    private DefaultRenderer mRenderer = new DefaultRenderer();
-
-    private GraphicalView mChartView;
 
     private DBHelper dbHelper;
     private SQLiteDatabase db;
 
-
+    private static int[] COLORS = new int[] { Color.BLUE, Color.RED,};
+    private static double[] VALUES = new double[2];
+    private static String[] NAME_LIST = new String[] { "Erledigt", "Offen", };
+    private CategorySeries mSeries = new CategorySeries("");
+    private DefaultRenderer mRenderer = new DefaultRenderer();
+    private GraphicalView mChartView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,19 +48,42 @@ public class UebersichtActivity extends Activity {
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
 
+        String query = "SELECT COUNT(*) FROM todo_workouthead "
+                + "WHERE STRFTIME('%W', SUBSTR(datum,7,4)||'-'||SUBSTR(datum,4,2)||'-'||SUBSTR(datum,1,2)) = STRFTIME('%W', 'now') "
+                + "AND SUBSTR(datum,7,4) = STRFTIME('%Y', 'now') "
+                + "AND abgeschlossen = 1";
+        Cursor cursor = db.rawQuery(query, null);
+        int erledigt = 0;
+        if(cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            erledigt = cursor.getInt(0);
+        }
+
+        query = "SELECT workouts FROM profil";
+        cursor = db.rawQuery(query, null);
+        int workoutsGesamt = 0;
+        if(cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            workoutsGesamt = cursor.getInt(0);
+        }
+
+        TextView tvWorkouts = (TextView)findViewById(R.id.uProzent);
+        tvWorkouts.setText(erledigt + " von " + workoutsGesamt + " Workouts");
+
+        VALUES[0] = Math.round(100.0 / workoutsGesamt * erledigt * 10) / 10.0;
+        VALUES[1] = 100.0 - VALUES[0];
+
         mRenderer.setApplyBackgroundColor(true);
-        //mRenderer.setBackgroundColor(Color.argb(100, 50, 50, 50));
         mRenderer.setChartTitleTextSize(20);
         mRenderer.setLabelsTextSize(20);
         mRenderer.setLegendTextSize(20);
         mRenderer.setPanEnabled(false);
-        // mRenderer.setMargins(new int[] { 20, 30, 15, 0 });
         mRenderer.setLegendHeight(-20);
         mRenderer.setZoomButtonsVisible(false);
         mRenderer.setStartAngle(90);
 
         for (int i = 0; i < VALUES.length; i++) {
-            mSeries.add(NAME_LIST[i] + " " + VALUES[i], VALUES[i]);
+            mSeries.add(NAME_LIST[i] + " " + VALUES[i] + "%", VALUES[i]);
             SimpleSeriesRenderer renderer = new SimpleSeriesRenderer();
             renderer.setColor(COLORS[(mSeries.getItemCount() - 1) % COLORS.length]);
             mRenderer.addSeriesRenderer(renderer);
@@ -77,9 +93,26 @@ public class UebersichtActivity extends Activity {
             mChartView.repaint();
         }
 
-        String query = "SELECT gewicht, groesse, age  from profil";
+        query = "SELECT datum FROM todo_workouthead WHERE abgeschlossen = 1 "
+                + "ORDER BY SUBSTR(datum, 7, 4) DESC, SUBSTR(datum, 4, 2) DESC, SUBSTR(datum, 1, 2) DESC LIMIT 1";
+        cursor = db.rawQuery(query, null);
+        if(cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            TextView tvLetztesWorkout = (TextView) findViewById(R.id.uLetWorDat);
+            tvLetztesWorkout.setText(cursor.getString(0));
+        }
 
-        Cursor cursor = db.rawQuery(query, null);
+        query = "SELECT datum FROM todo_workouthead WHERE abgeschlossen = 0 "
+                + "ORDER BY SUBSTR(datum, 7, 4), SUBSTR(datum, 4, 2), SUBSTR(datum, 1, 2) LIMIT 1";
+        cursor = db.rawQuery(query, null);
+        if(cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            TextView tvNaechstesWorkout = (TextView) findViewById(R.id.uNaeWorDat);
+            tvNaechstesWorkout.setText(cursor.getString(0));
+        }
+
+        query = "SELECT gewicht, groesse, age  from profil";
+        cursor = db.rawQuery(query, null);
         if (cursor.getCount() != 0) {
             cursor.moveToFirst();
 
@@ -128,37 +161,8 @@ public class UebersichtActivity extends Activity {
         if (mChartView == null) {
             LinearLayout layout = (LinearLayout) findViewById(R.id.chart);
             mChartView = ChartFactory.getPieChartView(this, mSeries, mRenderer);
-            mRenderer.setClickEnabled(true);
             mRenderer.setSelectableBuffer(10);
 
-            mChartView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    SeriesSelection seriesSelection = mChartView.getCurrentSeriesAndPoint();
-
-                    if (seriesSelection == null) {
-                        Toast.makeText(UebersichtActivity.this, "No chart element was clicked", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(UebersichtActivity.this,"Chart element data point index "+ (seriesSelection.getPointIndex()+1) + " was clicked" + " point value="+ seriesSelection.getValue(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
-            mChartView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    SeriesSelection seriesSelection = mChartView.getCurrentSeriesAndPoint();
-                    if (seriesSelection == null) {
-                        Toast.makeText(UebersichtActivity.this,"No chart element was long pressed", Toast.LENGTH_SHORT);
-                        return false;
-                    }
-                    else {
-                        Toast.makeText(UebersichtActivity.this,"Chart element data point index "+ seriesSelection.getPointIndex()+ " was long pressed",Toast.LENGTH_SHORT);
-                        return true;
-                    }
-                }
-            });
             layout.addView(mChartView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT));
         }
         else {

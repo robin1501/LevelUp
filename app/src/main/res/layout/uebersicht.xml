@@ -14,7 +14,7 @@
         android:text="@string/uebersicht"
         android:id="@+id/uebersichtTv"
         android:layout_gravity="bottom|top"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textColor="#FFFFFF"
         android:gravity="center_horizontal" />
 
@@ -23,9 +23,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="5"
-        android:orientation="horizontal"
-        android:layout_below="@+id/uebersichtTv"
-        android:layout_above="@+id/uBisErl">
+        android:orientation="horizontal">
     </LinearLayout>
 
     <LinearLayout
@@ -41,8 +39,6 @@
             android:text="@string/bisher_erledigt"
             android:textColor="#FFFFFF"
             android:id="@+id/uBisErl"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center_vertical"
             android:gravity="center_horizontal" />
 
@@ -54,10 +50,6 @@
             android:text="@string/noWorkout"
             android:textColor="#FFFFFF"
             android:id="@+id/uProzent"
-            android:layout_below="@id/uProzent"
-            android:layout_alignTop="@+id/uLetWor"
-            android:layout_alignLeft="@+id/uebersichtTv"
-            android:layout_alignStart="@+id/uebersichtTv"
             android:layout_gravity="center_vertical" />
 
 
@@ -77,8 +69,6 @@
             android:text="@string/letztes_workout"
             android:textColor="#FFFFFF"
             android:id="@+id/uLetWor"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center_vertical"
             android:gravity="center_horizontal" />
 
@@ -90,10 +80,6 @@
             android:text="@string/noWorkout"
             android:textColor="#FFFFFF"
             android:id="@+id/uLetWorDat"
-            android:layout_below="@id/uProzent"
-            android:layout_alignTop="@+id/uLetWor"
-            android:layout_alignLeft="@+id/uebersichtTv"
-            android:layout_alignStart="@+id/uebersichtTv"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
     <LinearLayout
@@ -109,8 +95,6 @@
             android:text="@string/naechstes_workout"
             android:textColor="#FFFFFF"
             android:id="@+id/uNaeWor"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center_vertical"
             android:gravity="center_horizontal" />
 
@@ -122,10 +106,6 @@
             android:text="@string/noWorkout"
             android:textColor="#FFFFFF"
             android:id="@+id/uNaeWorDat"
-            android:layout_below="@id/uProzent"
-            android:layout_alignTop="@+id/uLetWor"
-            android:layout_alignLeft="@+id/uebersichtTv"
-            android:layout_alignStart="@+id/uebersichtTv"
             android:layout_gravity="center_vertical" />
 
     </LinearLayout>
@@ -143,8 +123,6 @@
             android:text="@string/bmi"
             android:textColor="#FFFFFF"
             android:id="@+id/uBmi"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center_vertical"
             android:gravity="center_horizontal" />
 
@@ -156,18 +134,8 @@
             android:text="@string/noProfil"
             android:textColor="#FFFFFF"
             android:id="@+id/uBmiZahl"
-            android:layout_below="@id/uProzent"
-            android:layout_alignTop="@+id/uLetWor"
-            android:layout_alignLeft="@+id/uebersichtTv"
-            android:layout_alignStart="@+id/uebersichtTv"
             android:layout_gravity="center_vertical" />
 
     </LinearLayout>
-
-
-
-
-
-
 
 </LinearLayout>

@@ -62,10 +62,10 @@ public class UebungenDetail extends Activity {
 
             @Override
             public void onClick(View v) {
+
                 // start activity with intent
-                Intent intent = new Intent(UebungenDetail.this,
-                        Grafik.class);
-              //  intent.putExtra(SecondActivity.EXTRA_COUNT, mCounter);
+                Intent intent = new Intent(UebungenDetail.this, Grafik.class);
+                intent.putExtra("id", id);
                 startActivityForResult(intent, 0);
             }
         });
