@@ -3,6 +3,7 @@ package com.example.krro.levelup;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -90,10 +92,20 @@ public class StartWorkoutActivty extends Activity {
             }
         });
 
+
         Button btnAbschluss = (Button)findViewById(R.id.cbAbschluss);
         btnAbschluss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                // Tastatur automatisch schließen
+               InputMethodManager imm = (InputMethodManager)getSystemService(
+                        Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(txtSaetze.getWindowToken(), 0);
+                imm.hideSoftInputFromWindow(txtWiederholungen.getWindowToken(), 0);
+                imm.hideSoftInputFromWindow(txtGewicht.getWindowToken(), 0);
+
 
                 if (txtGewicht.getText().toString().equals("")
                         || txtWiederholungen.getText().toString().equals("")
@@ -143,6 +155,7 @@ public class StartWorkoutActivty extends Activity {
                         cursor.moveToFirst();
                         setData();
                     }
+
                 }
             }
         });
