@@ -47,7 +47,7 @@ public class StartWorkoutActivty extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startworkout);
 
-        Intent startWorkout = getIntent();
+        final Intent startWorkout = getIntent();
         final int terminID = startWorkout.getIntExtra("terminID", 0);
         final int workoutID = startWorkout.getIntExtra("workoutID", 0);
 
@@ -100,10 +100,10 @@ public class StartWorkoutActivty extends Activity {
                 // Tastatur automatisch schließen
                 InputMethodManager imm = (InputMethodManager)getSystemService(
                         Context.INPUT_METHOD_SERVICE);
+
                 imm.hideSoftInputFromWindow(txtSaetze.getWindowToken(), 0);
                 imm.hideSoftInputFromWindow(txtWiederholungen.getWindowToken(), 0);
                 imm.hideSoftInputFromWindow(txtGewicht.getWindowToken(), 0);
-
 
                 if (txtGewicht.getText().toString().equals("")
                         || txtWiederholungen.getText().toString().equals("")

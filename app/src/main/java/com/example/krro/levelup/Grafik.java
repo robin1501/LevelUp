@@ -30,121 +30,130 @@ import org.achartengine.renderer.XYSeriesRenderer;
 public class Grafik extends Activity {
     private DBHelper dbHelper;
     private SQLiteDatabase db;
+    private int[] gewicht;
+    private String[] datum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grafik);
 
-        OpenChart();
-
         int id;
         Intent uebungDetail = getIntent();
         id = uebungDetail.getIntExtra("id", 0);
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getReadableDatabase();
-
-     //   String query = "SELECT gewicht FROM todo_workoutpos WHERE u_id = " + 0;
         String query = "SELECT tp.gewicht, th.datum FROM todo_workoutpos tp inner join todo_workouthead th on tp.t_id = th.t_id WHERE u_id = " + id;
 
         Cursor cursor = db.rawQuery(query, null);
-        Log.i("Number of Records"," :: "+cursor.getCount());
 
-        if (cursor.getCount() != 0) {
-            cursor.moveToFirst();
+        int gewicht[]=new int[cursor.getCount()];
 
-            double gewicht = cursor.getDouble(0);
-            Log.i("Number of Records 1"," :: "+cursor.getCount());
-        }
-    }
-    private GraphicalView mChart;
+        String datum[]=new String[cursor.getCount()];
 
+        int i=0;
 
-    private String[] mMonth = new String[] {
-            "Jan", "Feb" , "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Okt",
-    "Nov", "Dez"};
-
-    private void OpenChart()
-    {
-     // Define the number of elements you want in the chart.
-        int z[]={0,1,2,3,4,5,6,7};
-
-
-
-        int x[]={10,18,32,21,48,60,53,60};
-
-
-        // Create XY Series for X Series.
-        XYSeries xSeries=new XYSeries("Gewichtsteigerung");
-
-
-        //  Adding data to the X Series.
-        for(int i=0;i<z.length;i++)
+        cursor.moveToFirst();
+        while (cursor.isAfterLast() == false)
         {
-            xSeries.add(z[i],x[i]);
-
+            gewicht[i]  = cursor.getInt(0);
+            datum[i] = cursor.getString(1);
+            i++;
+            cursor.moveToNext();
         }
 
-        // Create a Dataset to hold the XSeries.
+       // OpenChart();
 
-        XYMultipleSeriesDataset dataset=new XYMultipleSeriesDataset();
+         GraphicalView mChart;
 
-        // Add X series to the Dataset.
-        dataset.addSeries(xSeries);
+         String[] mMonth = datum;
 
+        int[] z= new int[datum.length];
 
-        // Create XYSeriesRenderer to customize XSeries
-
-        XYSeriesRenderer Xrenderer=new XYSeriesRenderer();
-        Xrenderer.setColor(Color.BLACK);
-        Xrenderer.setPointStyle(PointStyle.POINT);
-        Xrenderer.setDisplayChartValues(true);
-        Xrenderer.setLineWidth(4);
-        Xrenderer.setFillPoints(true);
-
-        // Create XYMultipleSeriesRenderer to customize the whole chart
-
-        XYMultipleSeriesRenderer mRenderer=new XYMultipleSeriesRenderer();
-
-        mRenderer.setChartTitle("Gewichtssteigerung");
-        mRenderer.setXTitle("Datum");
-        mRenderer.setYTitle("Gewicht in Kg");
-        mRenderer.setZoomEnabled(false);
-        mRenderer.setZoomButtonsVisible(false);
-        mRenderer.setXLabels(0);
-        mRenderer.setPanEnabled(true);
-
-        mRenderer.setApplyBackgroundColor(true);
-        mRenderer.setBackgroundColor(Color.TRANSPARENT);
-        mRenderer.setMarginsColor(Color.TRANSPARENT);
-
-        mRenderer.setShowGrid(false);
-
-        mRenderer.setClickEnabled(true);
-
-        for(int i=0;i<z.length;i++)
+        // Define the number of elements you want in the chart.
+        for(int a=0;a<datum.length;a++)
         {
-            mRenderer.addXTextLabel(i, mMonth[i]);
+            z[a]=a;
+
         }
 
-        // Adding the XSeriesRenderer to the MultipleRenderer.
-        mRenderer.addSeriesRenderer(Xrenderer);
+            int x[]= gewicht;
 
 
-        LinearLayout chart_container=(LinearLayout)findViewById(R.id.Chart_layout);
+            // Create XY Series for X Series.
+            XYSeries xSeries=new XYSeries("Gewichtsteigerung");
 
-        // Creating an intent to plot line chart using dataset and multipleRenderer
 
-        mChart=(GraphicalView) ChartFactory.getLineChartView(getBaseContext(), dataset, mRenderer);
+            //  Adding data to the X Series.
+            for(int d=0;d<z.length;d++)
+            {
+                xSeries.add(z[d],x[d]);
+
+            }
+
+            // Create a Dataset to hold the XSeries.
+
+            XYMultipleSeriesDataset dataset=new XYMultipleSeriesDataset();
+
+            // Add X series to the Dataset.
+            dataset.addSeries(xSeries);
+
+
+            // Create XYSeriesRenderer to customize XSeries
+
+            XYSeriesRenderer Xrenderer=new XYSeriesRenderer();
+            Xrenderer.setColor(Color.BLACK);
+            Xrenderer.setPointStyle(PointStyle.POINT);
+            Xrenderer.setDisplayChartValues(true);
+            Xrenderer.setLineWidth(4);
+            Xrenderer.setFillPoints(true);
+
+            // Create XYMultipleSeriesRenderer to customize the whole chart
+
+            XYMultipleSeriesRenderer mRenderer=new XYMultipleSeriesRenderer();
+
+            mRenderer.setChartTitle("Gewichtssteigerung");
+            mRenderer.setXTitle("Datum");
+            mRenderer.setYTitle("Gewicht in Kg");
+            mRenderer.setZoomEnabled(false);
+            mRenderer.setZoomButtonsVisible(false);
+            mRenderer.setXLabels(0);
+            mRenderer.setPanEnabled(true);
+
+            mRenderer.setApplyBackgroundColor(true);
+            mRenderer.setBackgroundColor(Color.TRANSPARENT);
+            mRenderer.setMarginsColor(Color.TRANSPARENT);
+
+            mRenderer.setShowGrid(false);
+
+            mRenderer.setClickEnabled(true);
+
+            for(int t=0;t<z.length;t++)
+            {
+                mRenderer.addXTextLabel(t, mMonth[t]);
+            }
+
+            // Adding the XSeriesRenderer to the MultipleRenderer.
+            mRenderer.addSeriesRenderer(Xrenderer);
+
+
+            LinearLayout chart_container=(LinearLayout)findViewById(R.id.Chart_layout);
+
+            // Creating an intent to plot line chart using dataset and multipleRenderer
+
+            mChart=(GraphicalView) ChartFactory.getLineChartView(getBaseContext(), dataset, mRenderer);
 
 
 // Add the graphical view mChart object into the Linear layout .
-        chart_container.addView(mChart);
+            chart_container.addView(mChart);
 
+
+        }
 
     }
 
-}
+
+
 
 
 
