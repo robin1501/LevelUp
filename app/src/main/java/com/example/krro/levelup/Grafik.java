@@ -76,6 +76,7 @@ public class Grafik extends Activity {
             z[a]=a;
 
         }
+        //
 
             int x[]= gewicht;
 
