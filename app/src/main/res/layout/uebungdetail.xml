@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:weightSum="1"
     android:background="@drawable/hintergrund"
     android:orientation="vertical">
@@ -10,14 +10,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:text="@string/uebung"
         android:textColor="#FFFFFF"
         android:id="@+id/tvUebung"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
     <ImageView
         android:layout_width="150dp"

@@ -2,6 +2,7 @@ package com.example.krro.levelup;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -48,7 +50,7 @@ public class ProfilActivity extends Activity {
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
 
-        String query = "SELECT name, age, gewicht, groesse, geschlecht, wunschgewicht, workouts FROM profil";
+        final String query = "SELECT name, age, gewicht, groesse, geschlecht, wunschgewicht, workouts FROM profil";
         cursor = db.rawQuery(query, null);
 
         if(cursor.getCount() > 0) {
@@ -68,7 +70,27 @@ public class ProfilActivity extends Activity {
 
         }
 
+        ImageView tagebuch = (ImageView)findViewById(R.id.ivTagebuch);
+        tagebuch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String cntTagebuch = "SELECT _id FROM tagebuch";
+                Cursor c = db.rawQuery(cntTagebuch, null);
 
+                Intent tagebuchActivity;
+
+                if(c.getCount() == 0)
+                {
+                    tagebuchActivity = new Intent(ProfilActivity.this, TagebucheintragActivity.class);
+                }
+                else
+                {
+                    tagebuchActivity = new Intent(ProfilActivity.this, TagebuchActivty.class);
+                }
+
+                startActivity(tagebuchActivity);
+            }
+        });
 
         Button save = (Button)findViewById(R.id.angry_btn);
         save.setOnClickListener(new View.OnClickListener() {
