@@ -29,7 +29,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/ivStart"
-        android:src="@drawable/start_icon2"
+        android:src="@drawable/start_icon"
         android:layout_marginLeft="25dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -39,7 +39,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/ivDelete"
-        android:src="@drawable/delete_icon2"
+        android:src="@drawable/delete_icon"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/ivStart"
         android:layout_toStartOf="@+id/ivStart" />
