@@ -21,6 +21,16 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:id="@+id/ivDelete"
+        android:src="@drawable/delete"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/ivTagebucheintrag"
         android:src="@drawable/add_tagebuch"
         android:layout_marginTop="10dp"

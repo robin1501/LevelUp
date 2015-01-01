@@ -2,12 +2,14 @@ package com.example.krro.levelup;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,6 +25,7 @@ public class TagebuchActivty extends Activity {
     private Cursor cursor;
 
     TextView tvDatum;
+    ImageView ivDelete;
     ImageView ivTagebucheintrag;
     ImageView ivBild;
     ImageView back;
@@ -36,6 +39,7 @@ public class TagebuchActivty extends Activity {
     TextView tvBeinumfang;
 
     String query;
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class TagebuchActivty extends Activity {
         setContentView(R.layout.tagebuch);
 
         tvDatum= (TextView)findViewById(R.id.tvDatum);
+        ivDelete = (ImageView)findViewById(R.id.ivDelete);
         ivTagebucheintrag = (ImageView)findViewById(R.id.ivTagebucheintrag);
         ivBild = (ImageView)findViewById(R.id.ivBild);
         back = (ImageView)findViewById(R.id.ivBack);
@@ -58,12 +63,43 @@ public class TagebuchActivty extends Activity {
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
 
-        query = "SELECT datum, bild, gewicht, schulterumfang, armumfang, "
+        query = "SELECT _id, datum, bild, gewicht, schulterumfang, armumfang, "
                 + "brustumfang, bauchumfang, hueftumfang, beinumfang "
                 + "FROM tagebuch";
         cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         setData();
+
+        ivDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+
+                alert.setTitle("Sind Sie sich sicher, dass Sie diesen Eintrag löschen wollen?");
+
+
+                alert.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        db.delete("tagebuch", "_id = " + id, null);
+
+                        cursor = db.rawQuery(query, null);
+                        if(cursor.getCount() != 0) {
+                            cursor.moveToLast();
+                            setData();
+                        }
+                    }
+                });
+
+                alert.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                    }
+                });
+
+                alert.show();
+            }
+        });
 
         ivTagebucheintrag.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,10 +163,12 @@ public class TagebuchActivty extends Activity {
             next.setVisibility(View.VISIBLE);
         }
 
-        String datum = cursor.getString(0);
+        id = cursor.getInt(0);
+
+        String datum = cursor.getString(1);
         tvDatum.setText(datum);
 
-        byte[] bild = cursor.getBlob(1);
+        byte[] bild = cursor.getBlob(2);
         if (bild != null)
         {
             ByteArrayInputStream in = new ByteArrayInputStream(bild);
@@ -142,25 +180,25 @@ public class TagebuchActivty extends Activity {
             ivBild.setImageResource(R.drawable.noimage);
         }
 
-        int gewicht = cursor.getInt(2);
+        int gewicht = cursor.getInt(3);
         tvGewicht.setText(gewicht+"");
 
-        int schulterumfang = cursor.getInt(3);
+        int schulterumfang = cursor.getInt(4);
         tvSchulterumfang.setText(schulterumfang+"");
 
-        int armumfang = cursor.getInt(4);
+        int armumfang = cursor.getInt(5);
         tvArmumfang.setText(armumfang+"");
 
-        int brustumfang = cursor.getInt(5);
+        int brustumfang = cursor.getInt(6);
         tvBrustumfang.setText(brustumfang+"");
 
-        int bauchumfang = cursor.getInt(6);
+        int bauchumfang = cursor.getInt(7);
         tvBauchumfang.setText(bauchumfang+"");
 
-        int hueftumfang = cursor.getInt(7);
+        int hueftumfang = cursor.getInt(8);
         tvHueftumfang.setText(hueftumfang+"");
 
-        int beinumfang = cursor.getInt(8);
+        int beinumfang = cursor.getInt(9);
         tvBeinumfang.setText(beinumfang+"");
     }
 }

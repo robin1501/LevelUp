@@ -15,16 +15,18 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:text="Beschreibung"
         android:id="@+id/tvBeschreibung"
+        android:singleLine="false"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivUebung"
         android:layout_toEndOf="@+id/ivUebung"
         android:layout_toLeftOf="@+id/cbAuswahl"
         android:layout_toStartOf="@+id/cbAuswahl"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        android:autoText="false" />
 
     <TextView
         android:layout_width="fill_parent"
