@@ -30,12 +30,18 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String INSERT_UEBUNG = "INSERT INTO uebungen "
             + "(beschreibung, bauch, bizeps, trizeps, brust, schulter, ruecken, beine, info) VALUES "
             + "('Bankdrücken', 0, 1, 0, 1, 0, 0, 0, ''), "
+            + "('Pull-Over', 0, 0, 0, 1, 0, 1, 0, ''), "
+            + "('Liegestütze', 0, 0, 1, 1, 0, 0, 0, ''), "
             + "('Kreuzheben', 1, 0, 0, 0, 1, 1, 1, ''), "
+            + "('Rudern am Kabelzug', 0, 1, 0, 0, 0, 1, 0, ''), "
+            + "('Hüftheben', 1, 0, 0, 0, 0, 0, 0, ''), "
             + "('Dips', 0, 0, 1, 1, 1, 0, 0, ''), "
             + "('Latziehen', 0, 1, 0, 0, 0, 0, 0, ''), "
             + "('Sit Ups', 1, 0, 0, 0, 0, 0, 0, 'Beine anwinkeln'), "
             + "('Beinpresse', 0, 0, 0, 0, 0, 0, 1, 'Winkel auf 40 Grad stellen'), "
             + "('Kniebeugen', 1, 0, 0, 0, 0, 1, 1, ''), "
+            + "('Rückenstrecker', 0, 0, 0, 0, 0, 1, 1, ''), "
+            + "('Kurzhantel-Ausfallschritt', 0, 0, 0, 0, 0, 0, 1, ''), "
             + "('Pull Ups', 0, 1, 0, 1, 0, 1, 0, '');";
 
     private static final String TABLE_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS workouthead ("
@@ -44,7 +50,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String INSERT_WORKOUT_HEAD = "INSERT INTO workouthead (beschreibung) VALUES "
             + "('Bauch'),"
-            + "('Brust und Arme');";
+            + "('Rücken'),"
+            + "('Beine'),"
+            + "('Arme'),"
+            + "('Brust');";
 
     private static final String TABLE_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS workoutpos ("
             + "w_id integer, "
