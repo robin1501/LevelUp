@@ -60,6 +60,12 @@
     <string name="uebungAbschluss">Übung abgeschlossen</string>
     <string name="workouts">Workouts</string>
     <string name="proWoche">pro Woche</string>
-
+    <string name="aktGewicht">Aktuelles Gewicht</string>
+    <string name="schulterumfang">Schulterumfang</string>
+    <string name="armumfang">Armumfang</string>
+    <string name="brustumfang">Brustumfang</string>
+    <string name="bauchumfang">Bauchumfang</string>
+    <string name="hueftumfang">Hüftumfang</string>
+    <string name="beinumfang">Beinumfang</string>
 
 </resources>

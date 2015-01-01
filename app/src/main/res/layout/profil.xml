@@ -18,13 +18,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"/>
 
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivTagebuch"
+        android:src="@drawable/tagebuch"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvProfil"
+        android:layout_marginTop="10dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/tvProfil"
+        android:layout_below="@+id/ivTagebuch"
         android:weightSum="2"
         android:id="@+id/linearLayout1"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="20dp">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
