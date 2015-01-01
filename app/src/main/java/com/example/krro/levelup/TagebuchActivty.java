@@ -58,7 +58,8 @@ public class TagebuchActivty extends Activity {
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
 
-        query = "SELECT datum, bild, gewicht, schulterumfang, armumfang, brustumfang, bauchumfang, hueftumfang, beinumfang "
+        query = "SELECT datum, bild, gewicht, schulterumfang, armumfang, "
+                + "brustumfang, bauchumfang, hueftumfang, beinumfang "
                 + "FROM tagebuch";
         cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
