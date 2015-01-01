@@ -8,7 +8,7 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "fitness.db";
-    private static final int DATABASE_VERSION = 20;
+    private static final int DATABASE_VERSION = 29;
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
@@ -62,7 +62,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String INSERT_WORKOUT_POS = "INSERT INTO workoutpos (w_id, u_id) "
             + "SELECT 1, u_id FROM uebungen WHERE bauch = 1 "
-            + "UNION ALL SELECT 2, u_id FROM uebungen WHERE brust = 1 OR bizeps = 1 OR trizeps = 1;";
+          //  + "SELECT 2, u_id FROM uebungen WHERE ruecken = 1 "
+          // + "SELECT 3, u_id FROM uebungen WHERE beine = 1 "
+           // + "SELECT 5, u_id FROM uebungen WHERE brust = 1 "
+            + "UNION ALL SELECT 4, u_id FROM uebungen WHERE  bizeps = 1 OR trizeps = 1;";
 
     private static final String TABLE_TODO_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS todo_workouthead ("
             + "t_id integer primary key, "
