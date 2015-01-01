@@ -21,13 +21,7 @@ import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
-/**
- * Created by Patrick W on 04.12.2014.
- */
-
-
-
-public class Grafik extends Activity {
+public class UebungStatistikActivity extends Activity {
     private DBHelper dbHelper;
     private SQLiteDatabase db;
     private int[] gewicht;

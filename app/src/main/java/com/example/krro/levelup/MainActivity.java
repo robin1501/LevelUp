@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 			startActivity(new Intent(this, WorkoutActivity.class));
 		}
 		else if(view.getId() == R.id.btnUebungen) {
-			startActivity(new Intent(this, UebungenActivity.class));
+			startActivity(new Intent(this, UebungActivity.class));
 		}
 		else if(view.getId() == R.id.btnProfil) {
 			startActivity(new Intent(this, ProfilActivity.class));

@@ -5,11 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "fitness.db";
-    private static final int DATABASE_VERSION = 17;
+    private static final int DATABASE_VERSION = 20;
 
     // Database creation sql statement
     private static final String TABLE_UEBUNG = "CREATE TABLE IF NOT EXISTS uebungen ("
@@ -43,10 +42,18 @@ public class DBHelper extends SQLiteOpenHelper {
             + "w_id integer primary key, "
             + "beschreibung text not null);";
 
+    private static final String INSERT_WORKOUT_HEAD = "INSERT INTO workouthead (beschreibung) VALUES "
+            + "('Bauch'),"
+            + "('Brust und Arme');";
+
     private static final String TABLE_WORKOUT_POS = "CREATE TABLE IF NOT EXISTS workoutpos ("
             + "w_id integer, "
             + "u_id integer, "
             + "PRIMARY KEY(w_id, u_id));";
+
+    private static final String INSERT_WORKOUT_POS = "INSERT INTO workoutpos (w_id, u_id) "
+            + "SELECT 1, u_id FROM uebungen WHERE bauch = 1 "
+            + "UNION ALL SELECT 2, u_id FROM uebungen WHERE brust = 1 OR bizeps = 1 OR trizeps = 1;";
 
     private static final String TABLE_TODO_WORKOUT_HEAD = "CREATE TABLE IF NOT EXISTS todo_workouthead ("
             + "t_id integer primary key, "
@@ -74,37 +81,56 @@ public class DBHelper extends SQLiteOpenHelper {
             + "wunschgewicht integer, "
             + "workouts integer);";
 
+    private static final String TABLE_TAGEBUCH = "CREATE TABLE IF NOT EXISTS tagebuch ("
+            + "_id integer primary key, "
+            + "datum string, "
+            + "bild blob, "
+            + "gewicht integer, "
+            + "schulterumfang integer, "
+            + "armumfang integer, "
+            + "brustumfang integer, "
+            + "bauchumfang integer, "
+            + "hueftumfang integer, "
+            + "beinumfang integer);";
+
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase database) {
-        database.execSQL(TABLE_UEBUNG);
-        database.execSQL(INSERT_UEBUNG);
-        database.execSQL(TABLE_WORKOUT_HEAD);
-        database.execSQL(TABLE_WORKOUT_POS);
-        database.execSQL(TABLE_TODO_WORKOUT_HEAD);
-        database.execSQL(TABLE_TODO_WORKOUT_POS);
-        database.execSQL(TABLE_PROFIL);
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(TABLE_UEBUNG);
+        db.execSQL(INSERT_UEBUNG);
+        db.execSQL(TABLE_WORKOUT_HEAD);
+        db.execSQL(INSERT_WORKOUT_HEAD);
+        db.execSQL(TABLE_WORKOUT_POS);
+        db.execSQL(INSERT_WORKOUT_POS);
+        db.execSQL(TABLE_TODO_WORKOUT_HEAD);
+        db.execSQL(TABLE_TODO_WORKOUT_POS);
+        db.execSQL(TABLE_PROFIL);
+        db.execSQL(TABLE_TAGEBUCH);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS profil");
         db.execSQL("DROP TABLE IF EXISTS uebungen");
         db.execSQL("DROP TABLE IF EXISTS workouthead");
         db.execSQL("DROP TABLE IF EXISTS workoutpos");
         db.execSQL("DROP TABLE IF EXISTS todo_workouthead");
         db.execSQL("DROP TABLE IF EXISTS todo_workoutpos");
+        db.execSQL("DROP TABLE IF EXISTS profil");
+        db.execSQL("DROP TABLE IF EXISTS tagebuch");
 
         db.execSQL(TABLE_UEBUNG);
         db.execSQL(INSERT_UEBUNG);
         db.execSQL(TABLE_WORKOUT_HEAD);
+        db.execSQL(INSERT_WORKOUT_HEAD);
         db.execSQL(TABLE_WORKOUT_POS);
+        db.execSQL(INSERT_WORKOUT_POS);
         db.execSQL(TABLE_TODO_WORKOUT_HEAD);
         db.execSQL(TABLE_TODO_WORKOUT_POS);
         db.execSQL(TABLE_PROFIL);
+        db.execSQL(TABLE_TAGEBUCH);
     }
 
 }

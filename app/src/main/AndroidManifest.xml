@@ -41,9 +41,9 @@
                   android:screenOrientation="portrait"></activity>
         <activity android:name="UebersichtActivity"
                   android:screenOrientation="portrait"></activity>
-        <activity android:name="UebungenActivity"
+        <activity android:name=".UebungActivity"
                   android:screenOrientation="portrait"></activity>
-        <activity android:name="UebungenDetail"
+        <activity android:name=".UebungDetail"
                   android:screenOrientation="portrait"></activity>
         <activity android:name="WorkoutActivity"
             android:screenOrientation="portrait"></activity>
@@ -55,7 +55,7 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="StartWorkoutActivty"
             android:screenOrientation="portrait"></activity>
-        <activity android:name="Grafik"
+        <activity android:name=".UebungStatistikActivity"
             android:screenOrientation="landscape"></activity>
 
 

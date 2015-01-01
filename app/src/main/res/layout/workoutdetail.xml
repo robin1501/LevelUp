@@ -18,21 +18,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"/>
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spMuskelgruppe"
-        android:layout_below="@+id/tvWorkout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/selectUebungen"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/btnSpeichern"
-        android:layout_below="@+id/spMuskelgruppe" />
+        android:layout_below="@+id/tvWorkout" />
 
     <Button
         android:layout_width="fill_parent"

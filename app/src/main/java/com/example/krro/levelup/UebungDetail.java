@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,7 +21,7 @@ import android.widget.Toast;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-public class UebungenDetail extends Activity {
+public class UebungDetail extends Activity {
 
     private static final int CAMERA_REQUEST = 1888;
     ImageView imgBild;
@@ -64,7 +63,7 @@ public class UebungenDetail extends Activity {
             public void onClick(View v) {
 
                 // start activity with intent
-                Intent intent = new Intent(UebungenDetail.this, Grafik.class);
+                Intent intent = new Intent(UebungDetail.this, UebungStatistikActivity.class);
                 intent.putExtra("id", id);
                 startActivityForResult(intent, 0);
             }
@@ -91,11 +90,11 @@ public class UebungenDetail extends Activity {
         tvUebung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(UebungenDetail.this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(UebungDetail.this);
 
                 alert.setTitle(R.string.neueBez);
 
-                final EditText input = new EditText(UebungenDetail.this);
+                final EditText input = new EditText(UebungDetail.this);
                 alert.setView(input);
 
                 alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -290,12 +289,12 @@ public class UebungenDetail extends Activity {
                 if(neueUebung)
                 {
                     db.insert("uebungen", null, values);
-                    UebungenDetail.this.finish();
+                    UebungDetail.this.finish();
                 }
                 else
                 {
                     db.update("uebungen", values, "u_id = " + id, null);
-                    UebungenDetail.this.finish();
+                    UebungDetail.this.finish();
                 }
                 Toast.makeText(getApplicationContext(), R.string.saveChanges, Toast.LENGTH_SHORT).show();
             }
