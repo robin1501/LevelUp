@@ -29,8 +29,6 @@ public class MainActivity extends Activity {
 		else if(view.getId() == R.id.btnTermine) {
 			startActivity(new Intent(this, TodoWorkoutActivity.class));
 		}
-		else if(view.getId() == R.id.btnEinstellungen) {
-			startActivity(new Intent(this, EinstellungenActivity.class));
-		}
+
 	}
 }
