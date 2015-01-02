@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/workout"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textColor="#FFFFFF"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
@@ -61,8 +61,6 @@
             android:shadowRadius="5"
             android:layout_gravity="bottom" />
 
-
     </LinearLayout>
-
 
 </LinearLayout>

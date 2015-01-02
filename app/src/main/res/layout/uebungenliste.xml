@@ -25,12 +25,12 @@
         android:layout_toEndOf="@+id/ivUebung"
         android:layout_toLeftOf="@+id/cbAuswahl"
         android:layout_toStartOf="@+id/cbAuswahl"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:autoText="false" />
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:id="@+id/tvMuskelgruppen"
         android:layout_toEndOf="@+id/ivUebung"
@@ -39,7 +39,7 @@
         android:maxLines="2"
         android:singleLine="false"
         android:text="Muskelgruppen"
-        android:textSize="12dp"
+        android:textSize="15sp"
         android:layout_toLeftOf="@+id/cbAuswahl"
         android:layout_toStartOf="@+id/cbAuswahl" />
 

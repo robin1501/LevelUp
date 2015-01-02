@@ -1,247 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1"
+    android:background="@drawable/hintergrund"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="Übung"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvUebung"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivBack"
+        android:src="@drawable/back"
+        android:layout_alignTop="@+id/ivBild"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivNext"
+        android:src="@drawable/next"
+        android:layout_alignTop="@+id/ivBack"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/ivBild"
+        android:layout_below="@+id/tvUebung"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1"
-        android:background="@drawable/hintergrund"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBild"
+        android:weightSum="5"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textColor="#FFFFFF"
+            android:text="@string/letztesGewicht"
+            android:id="@+id/tvLetztesGewicht"
+            android:textSize="20sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="Übung"
-            android:textColor="#FFFFFF"
-            android:id="@+id/tvUebung"
-            android:layout_gravity="center_horizontal"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"/>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/ivBack"
-            android:src="@drawable/back"
-            android:layout_alignTop="@+id/ivBild"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="50dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/ivNext"
-            android:src="@drawable/next"
-            android:layout_alignTop="@+id/ivBack"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/ivBild"
-            android:layout_below="@+id/tvUebung"
-            android:layout_centerHorizontal="true" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ivBild"
-            android:weightSum="5"
-            android:layout_marginTop="10dp"
-            android:id="@+id/linearLayout1">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:textColor="#FFFFFF"
-                android:text="@string/letztesGewicht"
-                android:id="@+id/tvLetztesGewicht"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="#FFFFFF"
-                android:text="Zahl"
-                android:id="@+id/tvGewicht"
-                android:textSize="20sp"
-                android:gravity="end"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="#FFFFFF"
-                android:text=" kg"
-                android:id="@+id/tvKG1"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayout1"
-            android:weightSum="5"
-            android:layout_marginTop="10dp"
-            android:id="@+id/linearLayout2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:textColor="#FFFFFF"
-                android:text="@string/Gewicht"
-                android:id="@+id/tvAktuellesGewicht"
-                android:textSize="20sp" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/txtGewicht"
-                android:textSize="20sp"
-                android:inputType="number"
-                android:gravity="end"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="#FFFFFF"
-                android:text=" kg"
-                android:id="@+id/tvKG2"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayout2"
-            android:weightSum="5"
-            android:layout_marginTop="10dp"
-            android:id="@+id/linearLayout3">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:textColor="#FFFFFF"
-                android:text="@string/letzteWiederholungen"
-                android:id="@+id/tvLetzteWiederholungen"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="#FFFFFF"
-                android:text="Zahl"
-                android:id="@+id/tvWiederholungen"
-                android:textSize="20sp"
-                android:gravity="end"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayout3"
-            android:weightSum="5"
-            android:layout_marginTop="10dp"
-            android:id="@+id/linearLayout4">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:textColor="#FFFFFF"
-                android:text="@string/Wiederholungen"
-                android:id="@+id/tvAktuelleWiederholungen"
-                android:textSize="20sp" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/txtWiederholungen"
-                android:textSize="20sp"
-                android:inputType="number"
-                android:gravity="end"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayout4"
-            android:weightSum="5"
-            android:layout_marginTop="10dp"
-            android:id="@+id/linearLayout5">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:textColor="#FFFFFF"
-                android:text="@string/letzteSaetze"
-                android:id="@+id/tvLetzteSaetze"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="#FFFFFF"
-                android:text="Zahl"
-                android:id="@+id/tvSaetze"
-                android:textSize="20sp"
-                android:gravity="end"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayout5"
-            android:weightSum="5"
-            android:layout_marginTop="10dp"
-            android:id="@+id/linearLayout6">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:textColor="#FFFFFF"
-                android:text="@string/Saetze"
-                android:id="@+id/tvAktuelleSaetze"
-                android:textSize="20sp" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/txtSaetze"
-                android:textSize="20sp"
-                android:gravity="end"
-                android:inputType="number"/>
-
-        </LinearLayout>
-
-        <Button
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_below="@id/linearLayout6"
-            android:id="@+id/cbAbschluss"
-            android:text="@string/uebungAbschluss"
-            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:background="@drawable/buttonshape"
-            android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"/>
+            android:text="Zahl"
+            android:id="@+id/tvGewicht"
+            android:textSize="20sp"
+            android:gravity="end"/>
 
-    </RelativeLayout>
-</ScrollView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:text=" kg"
+            android:id="@+id/tvKG1"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:weightSum="5"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout2">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textColor="#FFFFFF"
+            android:text="@string/Gewicht"
+            android:id="@+id/tvAktuellesGewicht"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/txtGewicht"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:gravity="end"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:text=" kg"
+            android:id="@+id/tvKG2"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:weightSum="5"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout3">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textColor="#FFFFFF"
+            android:text="@string/letzteWiederholungen"
+            android:id="@+id/tvLetzteWiederholungen"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:text="Zahl"
+            android:id="@+id/tvWiederholungen"
+            android:textSize="20sp"
+            android:gravity="end"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout3"
+        android:weightSum="5"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textColor="#FFFFFF"
+            android:text="@string/Wiederholungen"
+            android:id="@+id/tvAktuelleWiederholungen"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/txtWiederholungen"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:gravity="end"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout4"
+        android:weightSum="5"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout5">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textColor="#FFFFFF"
+            android:text="@string/letzteSaetze"
+            android:id="@+id/tvLetzteSaetze"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:text="Zahl"
+            android:id="@+id/tvSaetze"
+            android:textSize="20sp"
+            android:gravity="end"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout5"
+        android:weightSum="5"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout6">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textColor="#FFFFFF"
+            android:text="@string/Saetze"
+            android:id="@+id/tvAktuelleSaetze"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/txtSaetze"
+            android:textSize="20sp"
+            android:gravity="end"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbAbschluss"
+        android:text="@string/uebungAbschluss"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,19 +30,25 @@ public class UebungDetail extends Activity {
     private DBHelper dbHelper;
     private SQLiteDatabase db;
 
-    Integer id;
+    int id;
     String beschreibung;
     byte[] bild = null;
-    Integer bauch;
-    Integer bizeps;
-    Integer trizeps;
-    Integer brust;
-    Integer schulter;
-    Integer ruecken;
-    Integer beine;
+    int gewicht;
+    int wiederholungen;
+    int saetze;
+    int bauch;
+    int bizeps;
+    int trizeps;
+    int brust;
+    int schulter;
+    int ruecken;
+    int beine;
     String info;
 
     TextView tvUebung;
+    TextView txtGewicht;
+    TextView txtWiederholungen;
+    TextView txtSaetze;
     CheckBox cbBauch;
     CheckBox cbBizeps;
     CheckBox cbTrizeps;
@@ -76,6 +83,9 @@ public class UebungDetail extends Activity {
         tvUebung = (TextView) findViewById(R.id.tvUebung);
         imgBild = (ImageView) findViewById(R.id.imgUebung);
         imgBild.setImageResource(R.drawable.noimage);
+        txtGewicht = (TextView)findViewById(R.id.txtGewicht);
+        txtWiederholungen = (TextView)findViewById(R.id.txtWiederholungen);
+        txtSaetze = (TextView)findViewById(R.id.txtSaetze);
         cbBauch = (CheckBox)findViewById(R.id.cbBauch);
         cbBizeps = (CheckBox)findViewById(R.id.cbBizeps);
         cbTrizeps = (CheckBox)findViewById(R.id.cbTrizeps);
@@ -119,21 +129,26 @@ public class UebungDetail extends Activity {
 
         if(!neueUebung)
         {
+
             id = uebungDetail.getIntExtra("id", 0);
 
-            String query = "SELECT bild, bauch, bizeps, trizeps, brust, schulter, ruecken, beine, info FROM uebungen WHERE u_id = " + id;
+            String query = "SELECT bild, gewicht, wiederholungen, saetze, bauch, bizeps, trizeps, "
+                    + "brust, schulter, ruecken, beine, info FROM uebungen WHERE u_id = " + id;
             Cursor cursor = db.rawQuery(query, null);
             cursor.moveToFirst();
 
             bild = cursor.getBlob(0);
-            bauch = cursor.getInt(1);
-            bizeps = cursor.getInt(2);
-            trizeps = cursor.getInt(3);
-            brust = cursor.getInt(4);
-            schulter = cursor.getInt(5);
-            ruecken = cursor.getInt(6);
-            beine = cursor.getInt(7);
-            info = cursor.getString(8);
+            gewicht = cursor.getInt(1);
+            wiederholungen = cursor.getInt(2);
+            saetze = cursor.getInt(3);
+            bauch = cursor.getInt(4);
+            bizeps = cursor.getInt(5);
+            trizeps = cursor.getInt(6);
+            brust = cursor.getInt(7);
+            schulter = cursor.getInt(8);
+            ruecken = cursor.getInt(9);
+            beine = cursor.getInt(10);
+            info = cursor.getString(11);
 
             if (bild != null)
             {
@@ -141,6 +156,10 @@ public class UebungDetail extends Activity {
                 Bitmap bmpBild = BitmapFactory.decodeStream(in);
                 imgBild.setImageBitmap(bmpBild);
             }
+
+            txtGewicht.setText(gewicht+"");
+            txtWiederholungen.setText(wiederholungen+"");
+            txtSaetze.setText(saetze+"");
 
             if (bauch == 0)
             {
@@ -199,6 +218,15 @@ public class UebungDetail extends Activity {
                 cbBeine.setChecked(true);
             }
             txtInfo.setText(info);
+        }
+        else
+        {
+            LinearLayout ly2 = (LinearLayout)findViewById(R.id.linearLayout2);
+            ly2.setVisibility(View.GONE);
+            LinearLayout ly3 = (LinearLayout)findViewById(R.id.linearLayout3);
+            ly3.setVisibility(View.GONE);
+            LinearLayout ly4 = (LinearLayout)findViewById(R.id.linearLayout4);
+            ly4.setVisibility(View.GONE);
         }
 
         imgBild.setOnClickListener(new View.OnClickListener() {

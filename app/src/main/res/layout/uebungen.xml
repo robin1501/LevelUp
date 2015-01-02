@@ -12,12 +12,10 @@
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/uebungen"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textColor="#FFFFFF"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:gravity="center_vertical|center_horizontal" />
 
@@ -31,11 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="377dp"
         android:id="@+id/listUebungen"
-        android:choiceMode="singleChoice"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        />
+        android:choiceMode="singleChoice" />
 
     </LinearLayout>
 
@@ -43,9 +37,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/neueUebung"
@@ -61,8 +53,6 @@
             android:shadowRadius="5"
             android:layout_gravity="bottom" />
 
-
     </LinearLayout>
-
 
 </LinearLayout>

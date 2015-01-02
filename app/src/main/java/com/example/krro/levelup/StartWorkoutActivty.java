@@ -90,14 +90,11 @@ public class StartWorkoutActivty extends Activity {
             }
         });
 
-
         Button btnAbschluss = (Button)findViewById(R.id.cbAbschluss);
         btnAbschluss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
-                // Tastatur automatisch schließen
                 InputMethodManager imm = (InputMethodManager)getSystemService(
                         Context.INPUT_METHOD_SERVICE);
 
